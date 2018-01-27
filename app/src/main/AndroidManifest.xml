@@ -16,6 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AddTaskActivity"
+            android:label="@string/add_task_title"
+            android:parentActivityName=".HomeActivity"/>
+        <activity android:name=".ViewListActivity"
+            android:label="@string/view_list_title"
+            android:parentActivityName=".HomeActivity"></activity>
     </application>
 
 </manifest>
