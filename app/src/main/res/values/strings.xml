@@ -8,6 +8,7 @@
     <string name="task_details_hint">Task Details</string>
     <string name="important_urgent">Important/Urgent</string>
     <string name="unimportant_urgent">Unimportant/Urgent</string>
-    <string name="important_nonurgent">Unimportant/Urgent</string>
-    <string name="unimportant_nonurgent">Unimportant/Urgent</string>
+    <string name="important_nonurgent">Important/Non-urgent</string>
+    <string name="unimportant_nonurgent">Unimportant/Non-urgent</string>
+    <string name="submit_new_task">Add Task</string>
 </resources>
