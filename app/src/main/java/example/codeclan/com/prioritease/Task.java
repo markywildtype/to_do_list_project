@@ -7,12 +7,28 @@ package example.codeclan.com.prioritease;
 public class Task {
 
     private String taskName;
+    private String taskDetails;
+    private Complete completionStatus;
 
-    public Task(String taskName){
+    public Task(String taskName, String taskDetails){
         this.taskName = taskName;
+        this.taskDetails = taskDetails;
+        this.completionStatus = Complete.TO_DO;
     }
 
     public String getTaskName() {
         return this.taskName;
+    }
+
+    public String getTaskDetails() {
+        return this.taskDetails;
+    }
+
+    public Complete getCompletionStatus() {
+        return this.completionStatus;
+    }
+
+    public void setCompletionStatus(Complete completionStatus) {
+        this.completionStatus = completionStatus;
     }
 }
