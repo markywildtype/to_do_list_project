@@ -9,11 +9,14 @@ public class Task {
     private String taskName;
     private String taskDetails;
     private Complete completionStatus;
+    private TaskPriority taskPriority;
 
-    public Task(String taskName, String taskDetails){
+
+    public Task(String taskName, String taskDetails, TaskPriority taskPriority){
         this.taskName = taskName;
         this.taskDetails = taskDetails;
         this.completionStatus = Complete.TO_DO;
+        this.taskPriority = taskPriority;
     }
 
     public String getTaskName() {
@@ -38,5 +41,9 @@ public class Task {
 
     public void setTaskDetails(String taskDetails) {
         this.taskDetails = taskDetails;
+    }
+
+    public TaskPriority getTaskPriority() {
+        return this.taskPriority;
     }
 }

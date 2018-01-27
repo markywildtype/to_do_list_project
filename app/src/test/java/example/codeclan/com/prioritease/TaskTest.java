@@ -15,7 +15,7 @@ public class TaskTest {
 
     @Before
     public void before(){
-        task = new Task("Do shopping", "Milk, eggs, bread");
+        task = new Task("Do shopping", "Milk, eggs, bread", TaskPriority.UNIMPORTANT_URGENT);
     }
 
     @Test
@@ -49,5 +49,10 @@ public class TaskTest {
     public void canSetCompletionStatus(){
         task.setCompletionStatus(Complete.IN_PROGRESS);
         assertEquals(Complete.IN_PROGRESS, task.getCompletionStatus());
+    }
+
+    @Test
+    public void hasPriority(){
+        assertEquals(TaskPriority.UNIMPORTANT_URGENT, task.getTaskPriority());
     }
 }

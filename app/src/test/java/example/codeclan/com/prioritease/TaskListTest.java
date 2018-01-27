@@ -18,9 +18,9 @@ public class TaskListTest {
 
     @Before
     public void before(){
-        task = new Task("Shopping", "Eggs, milk, bread");
-        task2 = new Task("Dinner", "Lasagne, Pizza, Omelette");
-        task3 = new Task("Gym", "Weights, Cardio, HIIT");
+        task = new Task("Shopping", "Eggs, milk, bread", TaskPriority.IMPORTANT_NONURGENT);
+        task2 = new Task("Dinner", "Lasagne, Pizza, Omelette", TaskPriority.UNIMPORTANT_URGENT);
+        task3 = new Task("Gym", "Weights, Cardio, HIIT", TaskPriority.IMPORTANT_NONURGENT);
         taskList = new TaskList();
     }
 
