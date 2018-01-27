@@ -21,4 +21,13 @@ public class TaskList {
     public int countTasks() {
         return this.taskList.size();
     }
+
+    public ArrayList<Task> getTaskList() {
+        return new ArrayList<>(this.taskList);
+    }
+
+    public Task removeTask(Task task) {
+        this.taskList.remove(task);
+        return task;
+    }
 }

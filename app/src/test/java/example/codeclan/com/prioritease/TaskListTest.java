@@ -30,4 +30,20 @@ public class TaskListTest {
         assertEquals(1, taskList.countTasks());
     }
 
+    @Test
+    public void canRemoveFromTaskList(){
+        taskList.addTask(task);
+        taskList.addTask(task2);
+        taskList.addTask(task3);
+        assertEquals(3, taskList.countTasks());
+        taskList.removeTask(task2);
+        assertEquals(2, taskList.countTasks());
+    }
+
+    @Test
+    public void canGetTaskList(){
+        taskList.addTask(task);
+        assertEquals(1, taskList.getTaskList().size());
+    }
+
 }
