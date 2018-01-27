@@ -19,10 +19,15 @@
         <activity
             android:name=".AddTaskActivity"
             android:label="@string/add_task_title"
-            android:parentActivityName=".HomeActivity"/>
-        <activity android:name=".ViewListActivity"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".ViewListActivity"
             android:label="@string/view_list_title"
-            android:parentActivityName=".HomeActivity"></activity>
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".ViewListActivity2"
+            android:label="@string/title_activity_view_list2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
