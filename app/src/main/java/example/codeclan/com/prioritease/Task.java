@@ -31,4 +31,12 @@ public class Task {
     public void setCompletionStatus(Complete completionStatus) {
         this.completionStatus = completionStatus;
     }
+
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
+    }
+
+    public void setTaskDetails(String taskDetails) {
+        this.taskDetails = taskDetails;
+    }
 }

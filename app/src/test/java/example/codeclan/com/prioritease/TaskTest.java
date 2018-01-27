@@ -24,8 +24,20 @@ public class TaskTest {
     }
 
     @Test
+    public void canEditTaskName(){
+        task.setTaskName("Saturday shopping");
+        assertEquals("Saturday shopping", task.getTaskName());
+    }
+
+    @Test
     public void hasTaskDetails(){
         assertEquals("Milk, eggs, bread", task.getTaskDetails());
+    }
+
+    @Test
+    public void canEditTaskDetails(){
+        task.setTaskDetails("Milk, eggs, bread, sugar, cheese");
+        assertEquals("Milk, eggs, bread, sugar, cheese", task.getTaskDetails());
     }
 
     @Test
