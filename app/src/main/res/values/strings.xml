@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PrioritEase</string>
+    <string name="view_list_button">View List</string>
+    <string name="new_task_button">Add New Task</string>
 </resources>
