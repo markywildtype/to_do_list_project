@@ -112,28 +112,32 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:checked="true"
-            android:text="@string/important_urgent" />
+            android:text="@string/important_urgent"
+            android:onClick="onRadioButtonClicked"/>
 
         <RadioButton
             android:id="@+id/unimportant_urgent_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/unimportant_urgent" />
+            android:text="@string/unimportant_urgent"
+            android:onClick="onRadioButtonClicked"/>
 
         <RadioButton
             android:id="@+id/important_nonurgent_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/important_nonurgent" />
+            android:text="@string/important_nonurgent"
+            android:onClick="onRadioButtonClicked"/>
 
         <RadioButton
-            android:id="@+id/unimportant_nonurgent"
+            android:id="@+id/unimportant_nonurgent_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/unimportant_nonurgent" />
+            android:text="@string/unimportant_nonurgent"
+            android:onClick="onRadioButtonClicked"/>
     </RadioGroup>
 
     <Button

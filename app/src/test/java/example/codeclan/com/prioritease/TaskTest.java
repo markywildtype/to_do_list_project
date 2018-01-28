@@ -55,4 +55,9 @@ public class TaskTest {
     public void hasPriority(){
         assertEquals(TaskPriority.UNIMPORTANT_URGENT, task.getTaskPriority());
     }
+
+    @Test
+    public void canGetPriorityAsString(){
+        assertEquals("UNIMPORTANT_URGENT", task.getTaskPriority().name());
+    }
 }
