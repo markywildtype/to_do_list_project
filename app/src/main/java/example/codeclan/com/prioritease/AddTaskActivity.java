@@ -3,18 +3,39 @@ package example.codeclan.com.prioritease;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class AddTaskActivity extends AppCompatActivity {
+
+    EditText taskName;
+    EditText taskDetails;
+    RadioGroup priority;
+//    Button submitNewTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
+
+        taskName = findViewById(R.id.task_name);
+        taskDetails = findViewById(R.id.task_details);
+        priority = findViewById(R.id.priority);
+//        submitNewTask = findViewById(R.id.submit_new_task_button);
+
+//        submitNewTask.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
     }
 
     @Override
@@ -39,6 +60,8 @@ public class AddTaskActivity extends AppCompatActivity {
     }
 
     public void onSubmitButtonClicked(View view){
+        //TODO save to database
+        Log.d(getClass().toString(), taskName.getText().toString());
         Intent intent = new Intent(this, ViewListActivity.class);
         startActivity(intent);
         Toast.makeText(AddTaskActivity.this, "New task added!" , Toast.LENGTH_SHORT).show();
