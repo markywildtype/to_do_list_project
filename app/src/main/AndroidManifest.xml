@@ -19,7 +19,7 @@
         <activity
             android:name=".AddTaskActivity"
             android:label="@string/add_task_title"
-            android:parentActivityName=".HomeActivity" />
+            android:parentActivityName=".ViewListActivity" />
         <activity
             android:name=".ViewListActivity"
             android:label="@string/view_list_title"
