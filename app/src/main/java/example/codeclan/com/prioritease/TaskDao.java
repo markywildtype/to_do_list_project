@@ -17,8 +17,12 @@ import java.util.List;
 @Dao
 public interface TaskDao {
 
+//Doesn't work with ArrayList?
+//    @Query("SELECT * FROM tasks")
+//    public ArrayList<Task> getAllTasks();
+
     @Query("SELECT * FROM tasks")
-    public ArrayList<Task> getAllTasks();
+    public Task[] getAllTasks();
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
     public void addTask(Task task);

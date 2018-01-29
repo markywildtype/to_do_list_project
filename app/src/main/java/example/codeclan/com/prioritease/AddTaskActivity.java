@@ -34,6 +34,7 @@ public class AddTaskActivity extends AppCompatActivity {
         important_nonurgent = findViewById(R.id.important_nonurgent_button);
         unimportant_urgent = findViewById(R.id.unimportant_urgent_button);
         unimportant_nonurgent = findViewById(R.id.unimportant_nonurgent_button);
+        submitNewTask = findViewById(R.id.submit_new_task_button);
     }
 
 

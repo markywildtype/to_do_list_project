@@ -17,4 +17,9 @@
     <string name="edit_button">Edit</string>
     <string name="delete_button">Delete</string>
     <string name="task_details_label">PrioritEase: Task Details</string>
+    <string name="save_changes_button">Save Changes</string>
+    <string name="edit_task_title">PrioritEase: Edit Task</string>
+    <string name="name_header">Task Name</string>
+    <string name="priority_header">Priority</string>
+    <string name="status_header">Status</string>
 </resources>

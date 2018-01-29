@@ -28,13 +28,13 @@ public class Task implements Serializable{
 //    @ColumnInfo(name = "completion_status")
 //    private Complete completionStatus;
 
-    @TypeConverters({CompStatConverter.class})
+//    @TypeConverters({CompStatConverter.class})
     private Complete completionStatus;
 
 //    @ColumnInfo(name = "task_priority")
 //    private TaskPriority taskPriority;
 
-    @TypeConverters({TaPriConverter.class})
+//    @TypeConverters({TaPriConverter.class})
     private TaskPriority taskPriority;
 
 
@@ -47,31 +47,31 @@ public class Task implements Serializable{
 
 //TypeCoverters
 
-    public class CompStatConverter {
-
-        @TypeConverter
-        public String enumToString(Complete completionStatus){
-            return completionStatus.name();
-        }
-
-        @TypeConverter
-        public Complete stringToEnum(String stringStatus){
-            return Complete.valueOf(stringStatus);
-        }
-    }
-
-    public class TaPriConverter {
-
-        @TypeConverter
-        public String enumToString(TaskPriority completionStatus){
-            return completionStatus.name();
-        }
-
-        @TypeConverter
-        public TaskPriority stringToEnum(String stringStatus){
-            return TaskPriority.valueOf(stringStatus);
-        }
-    }
+//    public class CompStatConverter {
+//
+//        @TypeConverter
+//        public String enumToString(Complete completionStatus){
+//            return completionStatus.name();
+//        }
+//
+//        @TypeConverter
+//        public Complete stringToEnum(String stringStatus){
+//            return Complete.valueOf(stringStatus);
+//        }
+//    }
+//
+//    public class TaPriConverter {
+//
+//        @TypeConverter
+//        public String enumToString(TaskPriority completionStatus){
+//            return completionStatus.name();
+//        }
+//
+//        @TypeConverter
+//        public TaskPriority stringToEnum(String stringStatus){
+//            return TaskPriority.valueOf(stringStatus);
+//        }
+//    }
 
 //Getters
 
@@ -90,11 +90,6 @@ public class Task implements Serializable{
     public Complete getCompletionStatus(){
         return this.completionStatus;
     }
-
-//    public String getCompletionStatus(){
-//        String compStat = this.completionStatus.toString();
-//        return compStat;
-//    }
 
     public TaskPriority getTaskPriority(){
         return this.taskPriority;
