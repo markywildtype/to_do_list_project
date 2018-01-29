@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="70dp"
+    android:onClick="onListItemClick"
     tools:context="example.codeclan.com.prioritease.TaskListItemActivity">
 
     <TextView

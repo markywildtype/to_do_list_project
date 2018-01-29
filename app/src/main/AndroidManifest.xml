@@ -24,8 +24,10 @@
             android:name=".ViewListActivity"
             android:label="@string/view_list_title"
             android:parentActivityName=".HomeActivity" />
-        <activity android:name=".TaskListItemActivity" />
-        <activity android:name=".TaskDetailsActivity"></activity>
+        <activity android:name=".TaskListItemActivity"/>
+        <activity android:name=".TaskDetailsActivity"
+            android:label="@string/task_details_label"
+            android:parentActivityName=".ViewListActivity"></activity>
     </application>
 
 </manifest>

@@ -42,7 +42,7 @@ public class TaskTest {
 
     @Test
     public void completionStatusStartsAtToDo(){
-        assertEquals(Complete.TO_DO, task.getCompletionStatus());
+        assertEquals("Complete.TO_DO", task.getCompletionStatus());
     }
 
     @Test
@@ -52,12 +52,26 @@ public class TaskTest {
     }
 
     @Test
+    public void canGetCompletionStatusAsString(){
+        assertEquals("To do", task.getCompletionStatusString());
+    }
+
+
+    @Test
     public void hasPriority(){
         assertEquals(TaskPriority.UNIMPORTANT_URGENT, task.getTaskPriority());
     }
 
     @Test
-    public void canGetPriorityAsString(){
-        assertEquals("UNIMPORTANT_URGENT", task.getTaskPriority().name());
+    public void canSetPriority(){
+        task.setPriority(TaskPriority.UNIMPORTANT_NONURGENT);
+        assertEquals(TaskPriority.UNIMPORTANT_NONURGENT, task.getTaskPriority());
     }
+
+    @Test
+    public void canGetPriorityAsString(){
+        assertEquals("Unimportant/Urgent", task.getPriorityAsString());
+    }
+
+
 }

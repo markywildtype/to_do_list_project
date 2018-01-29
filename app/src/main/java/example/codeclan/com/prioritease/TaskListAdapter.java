@@ -31,10 +31,10 @@ class TaskListAdapter extends ArrayAdapter<Task>{
         taskName.setText(currentTask.getTaskName());
 
         TextView taskPriority = listItemView.findViewById(R.id.list_item_priority);
-        taskPriority.setText(currentTask.getTaskPriority().name());
+        taskPriority.setText(currentTask.getPriorityAsString());
 
         TextView taskCompletionStatus = listItemView.findViewById(R.id.list_item_task_completion_status);
-        taskCompletionStatus.setText(currentTask.getCompletionStatus().name());
+        taskCompletionStatus.setText(currentTask.getCompletionStatusString());
 
         listItemView.setTag(currentTask);
 

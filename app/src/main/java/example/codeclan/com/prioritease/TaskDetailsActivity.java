@@ -24,10 +24,10 @@ public class TaskDetailsActivity extends AppCompatActivity {
         taskName.setText(task.getTaskName());
 
         taskPriority = findViewById(R.id.task_details_priority);
-        taskPriority.setText(task.getTaskPriority().name());
+        taskPriority.setText(task.getPriorityAsString());
 
         taskCompletionStatus = findViewById(R.id.task_details_completion_status);
-        taskCompletionStatus.setText(task.getCompletionStatus().name());
+        taskCompletionStatus.setText(task.getCompletionStatusString());
 
         taskDetails = findViewById(R.id.task_details_task_details);
         taskDetails.setText(task.getTaskDetails());
