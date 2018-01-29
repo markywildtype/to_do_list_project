@@ -4,13 +4,22 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.support.design.widget.FloatingActionButton;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class ViewListActivity extends AppCompatActivity {
+
+    RecyclerView recyclerView;
+    RecyclerView.Adapter adapter;
+    //placeholder data
+    ArrayList<Task> dummyTasks;
+    //end placeholder data
 
     FloatingActionButton fab;
 
@@ -18,6 +27,34 @@ public class ViewListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_list);
+
+        recyclerView = findViewById(R.id.recycler_view);
+
+        //placeholder ArrayList
+        dummyTasks = new ArrayList<>();
+        Task task1 = new Task("test", "test", TaskPriority.IMPORTANT_NONURGENT);
+        Task task2 = new Task("test", "test", TaskPriority.IMPORTANT_URGENT);
+        Task task3 = new Task("test", "test", TaskPriority.UNIMPORTANT_NONURGENT);
+        Task task4 = new Task("test", "test", TaskPriority.UNIMPORTANT_URGENT);
+        Task task5 = new Task("test", "test", TaskPriority.IMPORTANT_NONURGENT);
+        Task task6 = new Task("test", "test", TaskPriority.IMPORTANT_NONURGENT);
+        Task task7 = new Task("test", "test", TaskPriority.IMPORTANT_NONURGENT);
+        Task task8 = new Task("test", "test", TaskPriority.IMPORTANT_NONURGENT);
+        Task task9 = new Task("test", "test", TaskPriority.IMPORTANT_NONURGENT);
+        dummyTasks.add(task1);
+        dummyTasks.add(task2);
+        dummyTasks.add(task3);
+        dummyTasks.add(task4);
+        dummyTasks.add(task5);
+        dummyTasks.add(task6);
+        dummyTasks.add(task7);
+        dummyTasks.add(task8);
+        dummyTasks.add(task9);
+        //end placeholder ArrayList
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new TaskListAdapter(dummyTasks);  //passing in placeholder data
+        recyclerView.setAdapter(adapter);
 
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener(){

@@ -79,9 +79,9 @@ public class AddTaskActivity extends AppCompatActivity {
         TaskPriority taskPriority = getPriorityFromRadioButton();
         Task task = new Task(newTask, details, taskPriority);
 
-//        Log.d(getClass().toString(), taskDetails.getText().toString());
-//        Log.d(getClass().toString(), taskName.getText().toString());
-//        Log.d(getClass().toString(), task.getTaskPriority().name());
+        Log.d(getClass().toString(), task.getTaskName());
+        Log.d(getClass().toString(), task.getTaskDetails());
+        Log.d(getClass().toString(), task.getTaskPriority().name());
 
         Intent intent = new Intent(this, ViewListActivity.class);
         startActivity(intent);
