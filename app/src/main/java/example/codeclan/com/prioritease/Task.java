@@ -1,10 +1,12 @@
 package example.codeclan.com.prioritease;
 
+import java.io.Serializable;
+
 /**
  * Created by user on 27/01/2018.
  */
 
-public class Task {
+public class Task implements Serializable{
 
     private String taskName;
     private String taskDetails;

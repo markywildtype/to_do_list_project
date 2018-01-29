@@ -1,57 +1,43 @@
 package example.codeclan.com.prioritease;
 
-import android.support.v7.view.menu.ListMenuItemView;
-import android.support.v7.widget.RecyclerView;
+import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 /**
- * Created by user on 28/01/2018.
+ * Created by user on 29/01/2018.
  */
 
-class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHolder> {
+class TaskListAdapter extends ArrayAdapter<Task>{
 
-    public TaskListAdapter(ArrayList<Task> dummyTasks) {
-        this.dummyTasks = dummyTasks;
+    public TaskListAdapter(Context context, ArrayList<Task> taskList) {
+        super(context, 0, taskList);
     }
 
-    //placeholder data
-    ArrayList<Task> dummyTasks;
-    //end placeholder data
-
-    @Override
-    public TaskListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_task_list_item, parent, false);
-
-        return new ViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(TaskListAdapter.ViewHolder holder, int position) {
-        holder.taskName.setText(dummyTasks.get(position).getTaskName());
-        holder.taskCompletionStatus.setText(dummyTasks.get(position).getCompletionStatus().name());
-        holder.taskPriority.setText(dummyTasks.get(position).getTaskPriority().name());
-    }
-
-    @Override
-    public int getItemCount() {
-        return dummyTasks.size();
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView taskName;
-        public TextView taskCompletionStatus;
-        public TextView taskPriority;
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-            taskName = itemView.findViewById(R.id.list_item_task_name);
-            taskCompletionStatus = itemView.findViewById(R.id.list_item_task_completion_status);
-            taskPriority = itemView.findViewById(R.id.list_item_priority);
+    public View getView(int position, View listItemView, ViewGroup parent) {
+        if (listItemView == null) {
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.activity_task_list_item, parent, false);
         }
+
+        Task currentTask = getItem(position);
+
+        TextView taskName = listItemView.findViewById(R.id.list_item_task_name);
+        taskName.setText(currentTask.getTaskName());
+
+        TextView taskPriority = listItemView.findViewById(R.id.list_item_priority);
+        taskPriority.setText(currentTask.getTaskPriority().name());
+
+        TextView taskCompletionStatus = listItemView.findViewById(R.id.list_item_task_completion_status);
+        taskCompletionStatus.setText(currentTask.getCompletionStatus().name());
+
+        listItemView.setTag(currentTask);
+
+        return listItemView;
     }
 }

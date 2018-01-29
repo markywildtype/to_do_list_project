@@ -14,4 +14,6 @@
     <string name="submit_new_task">Add Task</string>
     <string name="menu_view_list">View List</string>
     <string name="menu_add_task">Add Task</string>
+    <string name="edit_button">Edit</string>
+    <string name="delete_button">Delete</string>
 </resources>

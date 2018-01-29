@@ -5,18 +5,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.design.widget.FloatingActionButton;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class ViewListActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    RecyclerView.Adapter adapter;
+//    RecyclerView recyclerView;
+//    RecyclerView.Adapter adapter;
+
     //placeholder data
     ArrayList<Task> dummyTasks;
     //end placeholder data
@@ -28,7 +29,7 @@ public class ViewListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_list);
 
-        recyclerView = findViewById(R.id.recycler_view);
+//        recyclerView = findViewById(R.id.recycler_view);
 
         //placeholder ArrayList
         dummyTasks = new ArrayList<>();
@@ -52,9 +53,13 @@ public class ViewListActivity extends AppCompatActivity {
         dummyTasks.add(task9);
         //end placeholder ArrayList
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new TaskListAdapter(dummyTasks);  //passing in placeholder data
-        recyclerView.setAdapter(adapter);
+        TaskListAdapter taskListAdapter = new TaskListAdapter(this, dummyTasks);
+        ListView listView = findViewById(R.id.task_list_view);
+        listView.setAdapter(taskListAdapter);
+        
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        adapter = new TaskListRecyclerAdapter(dummyTasks);  //passing in placeholder data
+//        recyclerView.setAdapter(adapter);
 
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener(){
@@ -67,6 +72,17 @@ public class ViewListActivity extends AppCompatActivity {
 
     }
 
+    public void onListItemClick(View listItem){
+        Task task = (Task) listItem.getTag();
+
+        Intent intent = new Intent(this, TaskDetailsActivity.class);
+        intent.putExtra("task", task);
+        startActivity(intent);
+    }
+
+
+
+//Menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater menuInflater = getMenuInflater();
