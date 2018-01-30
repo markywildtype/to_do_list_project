@@ -23,6 +23,7 @@ public class ViewListActivity extends AppCompatActivity {
     TextView nameHeader, statusHeader, priorityHeader;
     Button sortByStatus, sortByPriority;
     ArrayList<Task> allTasks;
+    TaskListAdapter taskListAdapter;
 
     FloatingActionButton fab;
 
@@ -48,11 +49,8 @@ public class ViewListActivity extends AppCompatActivity {
         List<Task> allTasksAsList = db.taskDao().getAllTasks();
         allTasks.addAll(new ArrayList<>(allTasksAsList));
 
-//Sorting
-        checkIntentForSorting();
-
 //ListView and Adapter
-        TaskListAdapter taskListAdapter = new TaskListAdapter(this, allTasks);
+        taskListAdapter = new TaskListAdapter(this, allTasks);
         ListView listView = findViewById(R.id.task_list_view);
         listView.setAdapter(taskListAdapter);
 
@@ -77,35 +75,13 @@ public class ViewListActivity extends AppCompatActivity {
 
     public void onSortStatusClick(View view){
         Collections.sort(allTasks, Task.TaskStatusComparator);
-//        this.recreate();
-        Intent intent = new Intent(ViewListActivity.this, ViewListActivity.class);
-        intent.putExtra("Sort Status", 1);
-        startActivity(intent);
-
-        //TODO reload ViewList with sorted tasks
+        taskListAdapter.notifyDataSetChanged();
     }
 
     public void onSortPriorityClick(View view){
         Collections.sort(allTasks, Task.TaskPriorityComparator);
-        Intent intent = new Intent(ViewListActivity.this, ViewListActivity.class);
-        intent.putExtra("Sort Priority", 1);
-        startActivity(intent);
-
-        //TODO reload ViewList with sorted tasks
+        taskListAdapter.notifyDataSetChanged();
     }
-
-    public void checkIntentForSorting() {
-        Intent intent = getIntent();
-        if (intent.getExtras() != null){
-            if (intent.getExtras().containsKey("Sort Status")) {
-                Collections.sort(allTasks, Task.TaskStatusComparator);
-            } else if (intent.getExtras().containsKey("Sort Priority")) {
-                Collections.sort(allTasks, Task.TaskPriorityComparator);
-            }
-        }
-    }
-
-
 
 //Menu
     @Override
