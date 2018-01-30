@@ -4,7 +4,6 @@ import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -66,13 +65,13 @@ public class AddTaskActivity extends AppCompatActivity {
 
     public TaskPriority getPriorityFromRadioButton(){
         if(important_urgent.isChecked()){
-            return TaskPriority.IMPORTANT_URGENT;
+            return TaskPriority.A_IMPORTANT_URGENT;
         } else if(important_nonurgent.isChecked()){
-            return TaskPriority.IMPORTANT_NONURGENT;
+            return TaskPriority.C_IMPORTANT_NONURGENT;
         } else if(unimportant_urgent.isChecked()){
-            return TaskPriority.UNIMPORTANT_URGENT;
+            return TaskPriority.B_UNIMPORTANT_URGENT;
         } else if(unimportant_nonurgent.isChecked()){
-            return TaskPriority.UNIMPORTANT_NONURGENT;
+            return TaskPriority.D_UNIMPORTANT_NONURGENT;
         } else
             return null;
     }

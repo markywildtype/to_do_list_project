@@ -18,9 +18,9 @@
 //
 //    @Before
 //    public void before(){
-//        task = new Task("Shopping", "Eggs, milk, bread", TaskPriority.IMPORTANT_NONURGENT);
-//        task2 = new Task("Dinner", "Lasagne, Pizza, Omelette", TaskPriority.UNIMPORTANT_URGENT);
-//        task3 = new Task("Gym", "Weights, Cardio, HIIT", TaskPriority.IMPORTANT_NONURGENT);
+//        task = new Task("Shopping", "Eggs, milk, bread", TaskPriority.C_IMPORTANT_NONURGENT);
+//        task2 = new Task("Dinner", "Lasagne, Pizza, Omelette", TaskPriority.B_UNIMPORTANT_URGENT);
+//        task3 = new Task("Gym", "Weights, Cardio, HIIT", TaskPriority.C_IMPORTANT_NONURGENT);
 //        taskList = new TaskList();
 //    }
 //

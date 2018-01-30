@@ -1,11 +1,7 @@
 package example.codeclan.com.prioritease;
 
-import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
-import android.arch.persistence.room.TypeConverter;
-import android.arch.persistence.room.TypeConverters;
-import android.renderscript.RenderScript;
 
 import java.io.Serializable;
 import java.util.Comparator;
@@ -95,8 +91,8 @@ public class Task implements Serializable{
     public static Comparator<Task> TaskPriorityComparator = new Comparator<Task>() {
 
         public int compare(Task task1, Task task2) {
-            String taskPriority1 = task1.getPriorityAsString();
-            String taskPriority2 = task2.getPriorityAsString();
+            String taskPriority1 = task1.getTaskPriority().name();
+            String taskPriority2 = task2.getTaskPriority().name();
 
             return taskPriority1.compareTo(taskPriority2);
         }};
@@ -112,11 +108,11 @@ public class Task implements Serializable{
     }
 
     public String getPriorityAsString(){
-        if(taskPriority == TaskPriority.IMPORTANT_NONURGENT){
+        if(taskPriority == TaskPriority.C_IMPORTANT_NONURGENT){
             return "Important/Non-urgent";
-        } else if(taskPriority == TaskPriority.UNIMPORTANT_URGENT) {
+        } else if(taskPriority == TaskPriority.B_UNIMPORTANT_URGENT) {
             return "Unimportant/Urgent";
-        } else if(taskPriority == TaskPriority.UNIMPORTANT_NONURGENT) {
+        } else if(taskPriority == TaskPriority.D_UNIMPORTANT_NONURGENT) {
             return "Unimportant/Non-urgent";
         } else
             return "Important/Urgent";

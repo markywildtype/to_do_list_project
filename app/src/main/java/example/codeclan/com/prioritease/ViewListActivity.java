@@ -2,11 +2,9 @@ package example.codeclan.com.prioritease;
 
 import android.arch.persistence.room.Room;
 import android.content.Intent;
-import android.support.v4.os.AsyncTaskCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.design.widget.FloatingActionButton;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -28,8 +26,6 @@ public class ViewListActivity extends AppCompatActivity {
 
     FloatingActionButton fab;
 
-    String TAG;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +33,7 @@ public class ViewListActivity extends AppCompatActivity {
 
 
 //Placeholder data
-        allTasks = new TaskList2().getTaskList();
+        allTasks = new DummyData().getTaskList();
 
         nameHeader = findViewById(R.id.name_header);
         statusHeader = findViewById(R.id.status_header);
@@ -69,9 +65,6 @@ public class ViewListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        TAG = "Test Array Print";
-
     }
 
     public void onListItemClick(View listItem){

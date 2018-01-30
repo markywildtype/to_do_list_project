@@ -25,10 +25,10 @@ public interface TaskDao {
     public List<Task> getAllTasks();
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
-    public void addTask(Task task);
+    public void addTask(Task... task);
 
     @Update
-    public void updateTask(Task task);
+    public void updateTask(Task... task);
 
     @Delete
     public void deleteTask(Task task);
