@@ -103,11 +103,13 @@ public class EditTaskActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.action_view_list:
-                Intent intent = new Intent(this, ViewListActivity.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(this, ViewListActivity.class);
+                startActivity(intent1);
+                break;
             case R.id.action_add_task:
                 Intent intent2 = new Intent(this, AddTaskActivity.class);
                 startActivity(intent2);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

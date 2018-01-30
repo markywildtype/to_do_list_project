@@ -78,15 +78,28 @@ public class ViewListActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+//    public void onSortStatusClick(View view){
+//        if(ascDesc == "Ascending"){
+//            Collections.sort(allTasks, Task.TaskStatusComparatorDesc);
+//            ascDesc = "Descending";
+//            taskListAdapter.notifyDataSetChanged();
+//        } else if(ascDesc == "Descending"){
+//            Collections.sort(allTasks, Task.TaskStatusComparatorAsc);
+//            ascDesc = "Ascending";
+//            taskListAdapter.notifyDataSetChanged();
+//        }
+//    }
+
     public void onSortStatusClick(View view){
-        if(ascDesc == "Ascending"){
-            Collections.sort(allTasks, Task.TaskStatusComparatorDesc);
-            ascDesc = "Descending";
-            taskListAdapter.notifyDataSetChanged();
-        } else if(ascDesc == "Descending"){
-            Collections.sort(allTasks, Task.TaskStatusComparatorAsc);
-            ascDesc = "Ascending";
-            taskListAdapter.notifyDataSetChanged();
+        switch(ascDesc){
+            case "Ascending":
+                Collections.sort(allTasks, Task.TaskStatusComparatorDesc);
+                ascDesc = "Descending";
+                taskListAdapter.notifyDataSetChanged();
+            case "Descending":
+                Collections.sort(allTasks, Task.TaskStatusComparatorAsc);
+                ascDesc = "Ascending";
+                taskListAdapter.notifyDataSetChanged();
         }
     }
 
@@ -114,11 +127,13 @@ public class ViewListActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.action_view_list:
-                Intent intent = new Intent(this, ViewListActivity.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(this, ViewListActivity.class);
+                startActivity(intent1);
+                break;
             case R.id.action_add_task:
                 Intent intent2 = new Intent(this, AddTaskActivity.class);
                 startActivity(intent2);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
