@@ -24,7 +24,7 @@ public class ViewListActivity extends AppCompatActivity {
     Button sortByStatus, sortByPriority;
     ArrayList<Task> allTasks;
     TaskListAdapter taskListAdapter;
-    String ascDesc, impUr;
+    int sortStatus, sortPriority;
 
     FloatingActionButton fab;
 
@@ -51,8 +51,8 @@ public class ViewListActivity extends AppCompatActivity {
         allTasks.addAll(new ArrayList<>(allTasksAsList));
 
 //Sorting variables
-        ascDesc = "Ascending";
-        impUr = "ImpUr";
+        sortStatus = 0;
+        sortPriority = 0;
 
 //ListView and Adapter
         taskListAdapter = new TaskListAdapter(this, allTasks);
@@ -80,30 +80,31 @@ public class ViewListActivity extends AppCompatActivity {
 
 //Sorting methods
     public void onSortStatusClick(View view){
-        switch(ascDesc){
-            case "Ascending":
+        switch(sortStatus){
+            case 0:
                 Collections.sort(allTasks, Task.TaskStatusComparatorDesc);
-                ascDesc = "Descending";
+                sortStatus = 1;
                 taskListAdapter.notifyDataSetChanged();
                 break;
-            case "Descending":
+            case 1:
                 Collections.sort(allTasks, Task.TaskStatusComparatorAsc);
-                ascDesc = "Ascending";
+                sortStatus = 0;
                 taskListAdapter.notifyDataSetChanged();
                 break;
         }
+
     }
 
     public void onSortPriorityClick(View view) {
-        switch (impUr) {
-            case "ImpUr":
+        switch (sortPriority) {
+            case 0:
                 Collections.sort(allTasks, Task.TaskPriorityComparatorDesc);
-                impUr = "UrImp";
+                sortPriority = 1;
                 taskListAdapter.notifyDataSetChanged();
                 break;
-            case "UrImp":
+            case 1:
                 Collections.sort(allTasks, Task.TaskPriorityComparatorAsc);
-                impUr = "ImpUr";
+                sortPriority = 0;
                 taskListAdapter.notifyDataSetChanged();
                 break;
         }
