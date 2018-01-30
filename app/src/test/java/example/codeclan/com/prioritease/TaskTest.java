@@ -91,7 +91,7 @@ public class TaskTest {
         expectedArray.add(task2);
         expectedArray.add(task);
         expectedArray.add(task4);
-        Collections.sort(testArray, Task.TaskStatusComparator);
+        Collections.sort(testArray, Task.TaskStatusComparatorDesc);
         assertEquals(expectedArray.toString(), testArray.toString());
     }
 

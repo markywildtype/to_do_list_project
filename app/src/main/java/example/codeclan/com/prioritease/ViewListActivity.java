@@ -24,6 +24,7 @@ public class ViewListActivity extends AppCompatActivity {
     Button sortByStatus, sortByPriority;
     ArrayList<Task> allTasks;
     TaskListAdapter taskListAdapter;
+    String ascDesc, impUr;
 
     FloatingActionButton fab;
 
@@ -48,6 +49,10 @@ public class ViewListActivity extends AppCompatActivity {
 
         List<Task> allTasksAsList = db.taskDao().getAllTasks();
         allTasks.addAll(new ArrayList<>(allTasksAsList));
+
+//Sorting
+        ascDesc = "Ascending";
+        impUr = "ImpUr";
 
 //ListView and Adapter
         taskListAdapter = new TaskListAdapter(this, allTasks);
@@ -74,13 +79,27 @@ public class ViewListActivity extends AppCompatActivity {
     }
 
     public void onSortStatusClick(View view){
-        Collections.sort(allTasks, Task.TaskStatusComparator);
-        taskListAdapter.notifyDataSetChanged();
+        if(ascDesc == "Ascending"){
+            Collections.sort(allTasks, Task.TaskStatusComparatorDesc);
+            ascDesc = "Descending";
+            taskListAdapter.notifyDataSetChanged();
+        } else if(ascDesc == "Descending"){
+            Collections.sort(allTasks, Task.TaskStatusComparatorAsc);
+            ascDesc = "Ascending";
+            taskListAdapter.notifyDataSetChanged();
+        }
     }
 
     public void onSortPriorityClick(View view){
-        Collections.sort(allTasks, Task.TaskPriorityComparator);
-        taskListAdapter.notifyDataSetChanged();
+        if(impUr == "ImpUr"){
+            Collections.sort(allTasks, Task.TaskPriorityComparatorDesc);
+            impUr = "UrImp";
+            taskListAdapter.notifyDataSetChanged();
+        } else if(impUr == "UrImp"){
+            Collections.sort(allTasks, Task.TaskPriorityComparatorAsc);
+            impUr = "ImpUr";
+            taskListAdapter.notifyDataSetChanged();
+        }
     }
 
 //Menu
