@@ -53,7 +53,7 @@ public class TaskTest {
 
     @Test
     public void canGetCompletionStatusAsString(){
-        assertEquals("To do", task.getCompletionStatusString());
+        assertEquals("To do", task.getCompletionStatusAsString());
     }
 
 

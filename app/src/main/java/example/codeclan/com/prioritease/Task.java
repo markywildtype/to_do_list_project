@@ -19,59 +19,22 @@ public class Task implements Serializable{
     @PrimaryKey(autoGenerate = true)
     private int id;
 
-    @ColumnInfo(name = "task_name")
     private String taskName;
 
-    @ColumnInfo(name = "task_details")
     private String taskDetails;
 
-//    @ColumnInfo(name = "completion_status")
-//    private Complete completionStatus;
-
-    @TypeConverters({CompStatConverter.class})
     private Complete completionStatus;
 
-//    @ColumnInfo(name = "task_priority")
-//    private TaskPriority taskPriority;
-
-    @TypeConverters({TaPriConverter.class})
     private TaskPriority taskPriority;
 
 
-    public Task(String taskName, String taskDetails, TaskPriority taskPriority){
+    public Task(String taskName, String taskDetails, TaskPriority taskPriority, Complete completionStatus){
         this.taskName = taskName;
         this.taskDetails = taskDetails;
-        this.completionStatus = Complete.TO_DO;
+        this.completionStatus = completionStatus;
         this.taskPriority = taskPriority;
     }
 
-//TypeCoverters
-
-    public class CompStatConverter {
-
-        @TypeConverter
-        public String enumToString(Complete completionStatus){
-            return completionStatus.name();
-        }
-
-        @TypeConverter
-        public Complete stringToEnum(String stringStatus){
-            return Complete.valueOf(stringStatus);
-        }
-    }
-
-    public class TaPriConverter {
-
-        @TypeConverter
-        public String enumToString(TaskPriority completionStatus){
-            return completionStatus.name();
-        }
-
-        @TypeConverter
-        public TaskPriority stringToEnum(String stringStatus){
-            return TaskPriority.valueOf(stringStatus);
-        }
-    }
 
 //Getters
 
@@ -119,7 +82,7 @@ public class Task implements Serializable{
 
 //Extra
 
-    public String getCompletionStatusString(){
+    public String getCompletionStatusAsString(){
         if(completionStatus == Complete.IN_PROGRESS) {
             return "In progress";
         } else if (completionStatus == Complete.COMPLETE) {

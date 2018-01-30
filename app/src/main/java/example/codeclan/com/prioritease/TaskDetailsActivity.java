@@ -1,5 +1,6 @@
 package example.codeclan.com.prioritease;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,11 +18,14 @@ public class TaskDetailsActivity extends AppCompatActivity {
     Button editButton;
     Button deleteButton;
     Task task;
+    PrioritEaseDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_details);
+
+        db = Room.databaseBuilder(getApplicationContext(), PrioritEaseDatabase.class, "prioritease database").allowMainThreadQueries().build();
 
         Intent intent = getIntent();
         task = (Task) intent.getSerializableExtra("task");
@@ -33,7 +37,7 @@ public class TaskDetailsActivity extends AppCompatActivity {
         taskPriority.setText(task.getPriorityAsString());
 
         taskCompletionStatus = findViewById(R.id.task_details_completion_status);
-        taskCompletionStatus.setText(task.getCompletionStatusString());
+        taskCompletionStatus.setText(task.getCompletionStatusAsString());
 
         taskDetails = findViewById(R.id.task_details_task_details);
         taskDetails.setText(task.getTaskDetails());
@@ -49,7 +53,8 @@ public class TaskDetailsActivity extends AppCompatActivity {
     }
 
     public void onDeleteClick(View view){
-        //TODO delete from database
+        db.taskDao().deleteTask(task);
+
         Intent intent = new Intent(TaskDetailsActivity.this, ViewListActivity.class);
         startActivity(intent);
         Toast.makeText(TaskDetailsActivity.this, "Task deleted!" , Toast.LENGTH_SHORT).show();

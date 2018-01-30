@@ -2,6 +2,7 @@ package example.codeclan.com.prioritease;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.RoomDatabase;
+import android.arch.persistence.room.TypeConverter;
 import android.arch.persistence.room.TypeConverters;
 
 /**
@@ -9,7 +10,7 @@ import android.arch.persistence.room.TypeConverters;
  */
 
 @Database(entities = {Task.class}, version = 1)
-@TypeConverters({Task.CompStatConverter.class})
+@TypeConverters({EnumConverters.class})
 public abstract class PrioritEaseDatabase extends RoomDatabase{
     public abstract TaskDao taskDao();
 }

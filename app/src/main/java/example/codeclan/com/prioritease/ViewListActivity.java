@@ -12,13 +12,16 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ViewListActivity extends AppCompatActivity {
 
     TextView nameHeader;
     TextView statusHeader;
     TextView priorityHeader;
-    Task[] allTasks;
+    ArrayList<Task> allTasks;
 
     FloatingActionButton fab;
 
@@ -29,16 +32,17 @@ public class ViewListActivity extends AppCompatActivity {
 
 
 //Placeholder data
-        Task[] allTasks = new TaskList2().getTaskList();
+        ArrayList<Task> allTasks = new TaskList2().getTaskList();
 
         nameHeader = findViewById(R.id.name_header);
         statusHeader = findViewById(R.id.status_header);
         priorityHeader = findViewById(R.id.priority_header);
 
 //Database
-//        PrioritEaseDatabase db = Room.databaseBuilder(getApplicationContext(), PrioritEaseDatabase.class, "prioritease database").build();
-//
-//        allTasks = db.taskDao().getAllTasks();
+        PrioritEaseDatabase db = Room.databaseBuilder(getApplicationContext(), PrioritEaseDatabase.class, "prioritease database").allowMainThreadQueries().build();
+
+        List<Task> allTasksAsList = db.taskDao().getAllTasks();
+        allTasks.addAll(new ArrayList<>(allTasksAsList));
 
 //ListView and Adapter
         TaskListAdapter taskListAdapter = new TaskListAdapter(this, allTasks);

@@ -1,5 +1,6 @@
 package example.codeclan.com.prioritease;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ public class AddTaskActivity extends AppCompatActivity {
     RadioGroup priority;
     RadioButton important_urgent, important_nonurgent, unimportant_urgent, unimportant_nonurgent;
     Button submitNewTask;
+    PrioritEaseDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +37,10 @@ public class AddTaskActivity extends AppCompatActivity {
         unimportant_urgent = findViewById(R.id.unimportant_urgent_button);
         unimportant_nonurgent = findViewById(R.id.unimportant_nonurgent_button);
         submitNewTask = findViewById(R.id.submit_new_task_button);
-    }
 
+        db = Room.databaseBuilder(getApplicationContext(), PrioritEaseDatabase.class, "prioritease database").allowMainThreadQueries().build();
+
+    }
 
     //Menu
     @Override
@@ -74,15 +78,12 @@ public class AddTaskActivity extends AppCompatActivity {
     }
 
     public void onSubmitButtonClicked(View view){
-        //TODO save to database
         String newTask = taskName.getText().toString();
         String details = taskDetails.getText().toString();
         TaskPriority taskPriority = getPriorityFromRadioButton();
-        Task task = new Task(newTask, details, taskPriority);
+        Task task = new Task(newTask, details, taskPriority, Complete.TO_DO);
 
-        Log.d(getClass().toString(), task.getTaskName());
-        Log.d(getClass().toString(), task.getTaskDetails());
-        Log.d(getClass().toString(), task.getTaskPriority().name());
+        db.taskDao().addTask(task);
 
         Intent intent = new Intent(this, ViewListActivity.class);
         startActivity(intent);

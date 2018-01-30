@@ -22,7 +22,7 @@ public interface TaskDao {
 //    public ArrayList<Task> getAllTasks();
 
     @Query("SELECT * FROM tasks")
-    public Task[] getAllTasks();
+    public List<Task> getAllTasks();
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
     public void addTask(Task task);

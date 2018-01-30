@@ -1,5 +1,6 @@
 package example.codeclan.com.prioritease;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,13 +15,18 @@ public class EditTaskActivity extends AppCompatActivity {
     EditText editTaskName;
     EditText editTaskDetails;
     RadioButton important_urgent, important_nonurgent, unimportant_urgent, unimportant_nonurgent;
+    RadioButton to_do, in_progress, complete;
     Button saveChangesButton;
     Task task;
+    PrioritEaseDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_task);
+
+        db = Room.databaseBuilder(getApplicationContext(), PrioritEaseDatabase.class, "prioritease database").allowMainThreadQueries().build();
+
 
         Intent intent = getIntent();
         task = (Task) intent.getSerializableExtra("task");
@@ -36,7 +42,23 @@ public class EditTaskActivity extends AppCompatActivity {
         unimportant_urgent = findViewById(R.id.edit_unimportant_urgent_button);
         unimportant_nonurgent = findViewById(R.id.edit_unimportant_nonurgent_button);
 
+        to_do = findViewById(R.id.to_do);
+        in_progress = findViewById(R.id.in_progress);
+        complete = findViewById(R.id.complete);
+
         saveChangesButton = findViewById(R.id.save_changes_button);
+    }
+
+
+    public Complete getCompletionStatusFromRadioButton(){
+        if(to_do.isChecked()){
+            return Complete.TO_DO;
+        } else if(in_progress.isChecked()){
+            return Complete.IN_PROGRESS;
+        } else if(complete.isChecked()){
+            return Complete.COMPLETE;
+        } else
+            return null;
     }
 
     public TaskPriority getPriorityFromRadioButton(){
@@ -53,14 +75,16 @@ public class EditTaskActivity extends AppCompatActivity {
     }
 
     public void onSaveChangesClick(View view){
-        //TODO update database
-//        String taskName = editTaskName.getText().toString();
-//        String taskDetails = editTaskDetails.getText().toString();
-//        TaskPriority taskPriority = getPriorityFromRadioButton();
-
         task.setTaskName(editTaskName.getText().toString());
         task.setTaskDetails(editTaskDetails.getText().toString());
-        task.setPriority(getPriorityFromRadioButton());
+        if(getPriorityFromRadioButton() != null){
+            task.setPriority(getPriorityFromRadioButton());
+        }
+        if(getCompletionStatusFromRadioButton() != null){
+                task.setCompletionStatus(getCompletionStatusFromRadioButton());
+        }
+
+        db.taskDao().updateTask(task);
 
         Intent intent = new Intent(EditTaskActivity.this, ViewListActivity.class);
         startActivity(intent);

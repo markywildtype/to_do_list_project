@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 class TaskListAdapter extends ArrayAdapter<Task>{
 
-        public TaskListAdapter(Context context, Task[] taskList) {
+        public TaskListAdapter(Context context, ArrayList<Task> taskList) {
         super(context, 0, taskList);
     }
 
@@ -34,7 +34,7 @@ class TaskListAdapter extends ArrayAdapter<Task>{
         taskPriority.setText(currentTask.getPriorityAsString());
 
         TextView taskCompletionStatus = listItemView.findViewById(R.id.list_item_task_completion_status);
-        taskCompletionStatus.setText(currentTask.getCompletionStatusString());
+        taskCompletionStatus.setText(currentTask.getCompletionStatusAsString());
 
         listItemView.setTag(currentTask);
 
