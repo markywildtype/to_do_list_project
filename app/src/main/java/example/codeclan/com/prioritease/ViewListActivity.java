@@ -50,7 +50,7 @@ public class ViewListActivity extends AppCompatActivity {
         List<Task> allTasksAsList = db.taskDao().getAllTasks();
         allTasks.addAll(new ArrayList<>(allTasksAsList));
 
-//Sorting
+//Sorting variables
         ascDesc = "Ascending";
         impUr = "ImpUr";
 
@@ -78,40 +78,34 @@ public class ViewListActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    public void onSortStatusClick(View view){
-//        if(ascDesc == "Ascending"){
-//            Collections.sort(allTasks, Task.TaskStatusComparatorDesc);
-//            ascDesc = "Descending";
-//            taskListAdapter.notifyDataSetChanged();
-//        } else if(ascDesc == "Descending"){
-//            Collections.sort(allTasks, Task.TaskStatusComparatorAsc);
-//            ascDesc = "Ascending";
-//            taskListAdapter.notifyDataSetChanged();
-//        }
-//    }
-
+//Sorting methods
     public void onSortStatusClick(View view){
         switch(ascDesc){
             case "Ascending":
                 Collections.sort(allTasks, Task.TaskStatusComparatorDesc);
                 ascDesc = "Descending";
                 taskListAdapter.notifyDataSetChanged();
+                break;
             case "Descending":
                 Collections.sort(allTasks, Task.TaskStatusComparatorAsc);
                 ascDesc = "Ascending";
                 taskListAdapter.notifyDataSetChanged();
+                break;
         }
     }
 
-    public void onSortPriorityClick(View view){
-        if(impUr == "ImpUr"){
-            Collections.sort(allTasks, Task.TaskPriorityComparatorDesc);
-            impUr = "UrImp";
-            taskListAdapter.notifyDataSetChanged();
-        } else if(impUr == "UrImp"){
-            Collections.sort(allTasks, Task.TaskPriorityComparatorAsc);
-            impUr = "ImpUr";
-            taskListAdapter.notifyDataSetChanged();
+    public void onSortPriorityClick(View view) {
+        switch (impUr) {
+            case "ImpUr":
+                Collections.sort(allTasks, Task.TaskPriorityComparatorDesc);
+                impUr = "UrImp";
+                taskListAdapter.notifyDataSetChanged();
+                break;
+            case "UrImp":
+                Collections.sort(allTasks, Task.TaskPriorityComparatorAsc);
+                impUr = "ImpUr";
+                taskListAdapter.notifyDataSetChanged();
+                break;
         }
     }
 
