@@ -20,9 +20,9 @@ public class Task implements Serializable{
 
     private String taskDetails;
 
-    private Complete completionStatus;
+    public Complete completionStatus;
 
-    private TaskPriority taskPriority;
+    public TaskPriority taskPriority;
 
 
     public Task(String taskName, String taskDetails, TaskPriority taskPriority, Complete completionStatus){

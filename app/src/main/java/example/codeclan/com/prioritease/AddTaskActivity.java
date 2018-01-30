@@ -2,11 +2,7 @@ package example.codeclan.com.prioritease;
 
 import android.arch.persistence.room.Room;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +10,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class AddTaskActivity extends AppCompatActivity {
+public class AddTaskActivity extends MenuActivity {
 
     EditText taskName;
     EditText taskDetails;
@@ -65,28 +61,5 @@ public class AddTaskActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ViewListActivity.class);
         startActivity(intent);
         Toast.makeText(AddTaskActivity.this, "New task added!" , Toast.LENGTH_SHORT).show();
-    }
-
-    //Menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.activity_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
-            case R.id.action_view_list:
-                Intent intent1 = new Intent(this, ViewListActivity.class);
-                startActivity(intent1);
-                break;
-            case R.id.action_add_task:
-                Intent intent2 = new Intent(this, AddTaskActivity.class);
-                startActivity(intent2);
-                break;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

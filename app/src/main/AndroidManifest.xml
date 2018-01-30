@@ -29,10 +29,11 @@
             android:name=".TaskDetailsActivity"
             android:label="@string/task_details_label"
             android:parentActivityName=".ViewListActivity" />
-        <activity android:name=".EditTaskActivity"
-            android:parentActivityName=".ViewListActivity"
-            android:label="@string/edit_task_title">
-        </activity>
+        <activity
+            android:name=".EditTaskActivity"
+            android:label="@string/edit_task_title"
+            android:parentActivityName=".ViewListActivity"></activity>
+        <activity android:name=".MenuActivity"></activity>
     </application>
 
 </manifest>
