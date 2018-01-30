@@ -2,13 +2,12 @@ package example.codeclan.com.prioritease;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class TaskListItemActivity extends AppCompatActivity {
 
-    TextView listItemTaskName;
-    TextView listItemCompletionStatus;
-    TextView listItemPriority;
+    TextView listItemTaskName, listItemCompletionStatus, listItemPriority;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

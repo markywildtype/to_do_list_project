@@ -2,28 +2,33 @@ package example.codeclan.com.prioritease;
 
 import android.arch.persistence.room.Room;
 import android.content.Intent;
+import android.support.v4.os.AsyncTaskCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.design.widget.FloatingActionButton;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
 public class ViewListActivity extends AppCompatActivity {
 
-    TextView nameHeader;
-    TextView statusHeader;
-    TextView priorityHeader;
+    TextView nameHeader, statusHeader, priorityHeader;
+    Button sortByStatus, sortByPriority;
     ArrayList<Task> allTasks;
 
     FloatingActionButton fab;
+
+    String TAG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,17 +37,23 @@ public class ViewListActivity extends AppCompatActivity {
 
 
 //Placeholder data
-        ArrayList<Task> allTasks = new TaskList2().getTaskList();
+        allTasks = new TaskList2().getTaskList();
 
         nameHeader = findViewById(R.id.name_header);
         statusHeader = findViewById(R.id.status_header);
         priorityHeader = findViewById(R.id.priority_header);
+
+        sortByStatus = findViewById(R.id.sort_status_button);
+        sortByPriority = findViewById(R.id.sort_priority_button);
 
 //Database
         PrioritEaseDatabase db = Room.databaseBuilder(getApplicationContext(), PrioritEaseDatabase.class, "prioritease database").allowMainThreadQueries().build();
 
         List<Task> allTasksAsList = db.taskDao().getAllTasks();
         allTasks.addAll(new ArrayList<>(allTasksAsList));
+
+//Sorting
+        checkIntentForSorting();
 
 //ListView and Adapter
         TaskListAdapter taskListAdapter = new TaskListAdapter(this, allTasks);
@@ -59,6 +70,8 @@ public class ViewListActivity extends AppCompatActivity {
             }
         });
 
+        TAG = "Test Array Print";
+
     }
 
     public void onListItemClick(View listItem){
@@ -67,6 +80,36 @@ public class ViewListActivity extends AppCompatActivity {
         Intent intent = new Intent(this, TaskDetailsActivity.class);
         intent.putExtra("task", task);
         startActivity(intent);
+    }
+
+    public void onSortStatusClick(View view){
+        Collections.sort(allTasks, Task.TaskStatusComparator);
+//        this.recreate();
+        Intent intent = new Intent(ViewListActivity.this, ViewListActivity.class);
+        intent.putExtra("Sort Status", 1);
+        startActivity(intent);
+
+        //TODO reload ViewList with sorted tasks
+    }
+
+    public void onSortPriorityClick(View view){
+        Collections.sort(allTasks, Task.TaskPriorityComparator);
+        Intent intent = new Intent(ViewListActivity.this, ViewListActivity.class);
+        intent.putExtra("Sort Priority", 1);
+        startActivity(intent);
+
+        //TODO reload ViewList with sorted tasks
+    }
+
+    public void checkIntentForSorting() {
+        Intent intent = getIntent();
+        if (intent.getExtras() != null){
+            if (intent.getExtras().containsKey("Sort Status")) {
+                Collections.sort(allTasks, Task.TaskStatusComparator);
+            } else if (intent.getExtras().containsKey("Sort Priority")) {
+                Collections.sort(allTasks, Task.TaskPriorityComparator);
+            }
+        }
     }
 
 

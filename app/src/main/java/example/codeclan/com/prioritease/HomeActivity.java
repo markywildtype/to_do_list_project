@@ -22,14 +22,6 @@ public class HomeActivity extends AppCompatActivity {
         newTaskButton = findViewById(R.id.new_task_button);
     }
 
-    //Menu unnecessary on this page?
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu){
-//        MenuInflater menuInflater = getMenuInflater();
-//        menuInflater.inflate(R.menu.activity_main, menu);
-//        return true;
-//    }
-
     public void onAddTaskButtonClicked(View button){
         Intent intent = new Intent(this, AddTaskActivity.class);
         startActivity(intent);
