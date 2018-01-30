@@ -7,104 +7,86 @@
     android:padding="18dp"
     tools:context="example.codeclan.com.prioritease.AddTaskActivity">
 
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textContainer"
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <!--<android.support.design.widget.TextInputLayout-->
-        <!--android:id="@+id/text_input_wrapper"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginBottom="8dp"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:hint="@string/task_name">-->
-        <!--&lt;!&ndash;app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;app:layout_constraintVertical_bias="0.039"&ndash;&gt;-->
-        <!--&lt;!&ndash;tools:layout_editor_absoluteX="18dp">&ndash;&gt;-->
+        <EditText
+            android:id="@+id/task_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:width="300dp"
+            android:height="40dp"
+            android:hint="@string/task_name_hint"
+            android:inputType="textCapSentences"
+            android:maxLength="30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.039"></EditText>
+    </android.support.design.widget.TextInputLayout>
 
-        <!--<android.support.design.widget.TextInputEditText-->
-           <!--android:id="@+id/task_name__test"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content">-->
-            <!--&lt;!&ndash;android:hint="Test Hint"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:id="@+id/task_name_test"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_marginBottom="8dp"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_marginEnd="8dp"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_marginStart="8dp"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:layout_marginTop="8dp"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:width="300dp"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:height="40dp"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:text="@string/task_name_hint">&ndash;&gt;-->
-            <!--&lt;!&ndash;android:hint="@string/task_name_hint"&ndash;&gt;-->
-            <!--&lt;!&ndash;android:maxLength="30"&ndash;&gt;-->
-            <!--&lt;!&ndash;&lt;!&ndash;app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;&ndash;&gt;-->
-            <!--&lt;!&ndash;&lt;!&ndash;app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;&ndash;&gt;-->
-            <!--&lt;!&ndash;&lt;!&ndash;app:layout_constraintStart_toStartOf="parent"&ndash;&gt;&ndash;&gt;-->
-            <!--&lt;!&ndash;&lt;!&ndash;app:layout_constraintTop_toTopOf="parent"&ndash;&gt;&ndash;&gt;-->
-            <!--&lt;!&ndash;&lt;!&ndash;app:layout_constraintVertical_bias="0.039">&ndash;&gt;&ndash;&gt;-->
-        <!--</android.support.design.widget.TextInputEditText>-->
-
-    <!--</android.support.design.widget.TextInputLayout>-->
-
-
-
-    <EditText
-        android:id="@+id/task_name"
-        android:layout_width="wrap_content"
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:width="300dp"
-        android:height="40dp"
-        android:hint="@string/task_name_hint"
-        android:maxLength="30"
+        app:counterEnabled="true"
+        app:counterMaxLength="200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039">
+        app:layout_constraintVertical_bias="0.292">
 
-    </EditText>
-
-    <EditText
-        android:id="@+id/task_details"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:width="300dp"
-        android:height="160dp"
-        android:hint="@string/task_details_hint"
-        android:maxLength="200"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.426"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/task_name"
-        app:layout_constraintVertical_bias="0.06">
-
-    </EditText>
+        <EditText
+            android:id="@+id/task_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:width="300dp"
+            android:height="160dp"
+            android:hint="@string/task_details_hint"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLength="200"
+            android:scrollHorizontally="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.426"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/task_name"
+            app:layout_constraintVertical_bias="0.06"></EditText>
+    </android.support.design.widget.TextInputLayout>
 
     <RadioGroup
         android:id="@+id/priority"
-        android:layout_width="213dp"
-        android:layout_height="149dp"
+        android:layout_width="231dp"
+        android:layout_height="125dp"
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintHorizontal_bias="0.211"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875">
+        app:layout_constraintVertical_bias="0.953">
 
         <RadioButton
             android:id="@+id/important_urgent_button"
@@ -112,28 +94,28 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:checked="true"
-            android:text="@string/important_urgent"/>
+            android:text="@string/important_urgent" />
 
         <RadioButton
             android:id="@+id/unimportant_urgent_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/unimportant_urgent"/>
+            android:text="@string/unimportant_urgent" />
 
         <RadioButton
             android:id="@+id/important_nonurgent_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/important_nonurgent"/>
+            android:text="@string/important_nonurgent" />
 
         <RadioButton
             android:id="@+id/unimportant_nonurgent_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/unimportant_nonurgent"/>
+            android:text="@string/unimportant_nonurgent" />
     </RadioGroup>
 
     <Button
@@ -143,8 +125,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/submit_new_task"
         android:onClick="onSubmitButtonClicked"
+        android:text="@string/submit_new_task"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

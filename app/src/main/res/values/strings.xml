@@ -5,8 +5,8 @@
     <string name="add_task_title">PrioritEase: Add Task</string>
     <string name="view_list_title">PrioritEase: To Do</string>
     <string name="task_name">Task Name:</string>
-    <string name="task_name_hint">Task Name (30 characters)</string>
-    <string name="task_details_hint">Task Details (200 characters)</string>
+    <string name="task_name_hint">Task Name</string>
+    <string name="task_details_hint">Task Details</string>
     <string name="important_urgent">Important/Urgent</string>
     <string name="unimportant_urgent">Unimportant/Urgent</string>
     <string name="important_nonurgent">Important/Non-urgent</string>

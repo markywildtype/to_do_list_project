@@ -12,8 +12,7 @@ import android.widget.Toast;
 
 public class AddTaskActivity extends MenuActivity {
 
-    EditText taskName;
-    EditText taskDetails;
+    EditText taskName, taskDetails;
     RadioGroup priority;
     RadioButton important_urgent, important_nonurgent, unimportant_urgent, unimportant_nonurgent;
     Button submitNewTask;
