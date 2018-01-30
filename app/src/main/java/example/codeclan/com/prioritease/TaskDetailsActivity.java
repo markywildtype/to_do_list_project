@@ -68,16 +68,16 @@ public class TaskDetailsActivity extends AppCompatActivity {
         return true;
     }
 
+//Menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        if(item.getItemId() == R.id.action_view_list){
-            Intent intent = new Intent(this, ViewListActivity.class);
-            startActivity(intent);
-            return true;
-        } else if(item.getItemId() == R.id.action_add_task){
-            Intent intent = new Intent(this, AddTaskActivity.class);
-            startActivity(intent);
-            return true;
+        switch(item.getItemId()){
+            case R.id.action_view_list:
+                Intent intent = new Intent(this, ViewListActivity.class);
+                startActivity(intent);
+            case R.id.action_add_task:
+                Intent intent2 = new Intent(this, AddTaskActivity.class);
+                startActivity(intent2);
         }
         return super.onOptionsItemSelected(item);
     }

@@ -91,6 +91,7 @@ public class EditTaskActivity extends AppCompatActivity {
         Toast.makeText(EditTaskActivity.this, "Task updated!" , Toast.LENGTH_SHORT).show();
     }
 
+//Menu
     @Override
     public boolean onCreateOptionsMenu(android.view.Menu menu){
         MenuInflater menuInflater = getMenuInflater();
@@ -100,14 +101,13 @@ public class EditTaskActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        if(item.getItemId() == R.id.action_view_list){
-            Intent intent = new Intent(this, ViewListActivity.class);
-            startActivity(intent);
-            return true;
-        } else if(item.getItemId() == R.id.action_add_task){
-            Intent intent = new Intent(this, AddTaskActivity.class);
-            startActivity(intent);
-            return true;
+        switch(item.getItemId()){
+            case R.id.action_view_list:
+                Intent intent = new Intent(this, ViewListActivity.class);
+                startActivity(intent);
+            case R.id.action_add_task:
+                Intent intent2 = new Intent(this, AddTaskActivity.class);
+                startActivity(intent2);
         }
         return super.onOptionsItemSelected(item);
     }

@@ -41,28 +41,6 @@ public class AddTaskActivity extends AppCompatActivity {
 
     }
 
-    //Menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.activity_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        if(item.getItemId() == R.id.action_view_list){
-            Intent intent = new Intent(this, ViewListActivity.class);
-            startActivity(intent);
-            return true;
-        } else if(item.getItemId() == R.id.action_add_task){
-            Intent intent = new Intent(this, AddTaskActivity.class);
-            startActivity(intent);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
     public TaskPriority getPriorityFromRadioButton(){
         if(important_urgent.isChecked()){
             return TaskPriority.A_IMPORTANT_URGENT;
@@ -87,5 +65,26 @@ public class AddTaskActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ViewListActivity.class);
         startActivity(intent);
         Toast.makeText(AddTaskActivity.this, "New task added!" , Toast.LENGTH_SHORT).show();
+    }
+
+    //Menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.activity_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.action_view_list:
+                Intent intent = new Intent(this, ViewListActivity.class);
+                startActivity(intent);
+            case R.id.action_add_task:
+                Intent intent2 = new Intent(this, AddTaskActivity.class);
+                startActivity(intent2);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
