@@ -16,9 +16,7 @@ import java.util.ArrayList;
 
 class TaskListAdapter extends ArrayAdapter<Task>{
 
-    public TaskListAdapter(Context context, ArrayList<Task> taskList) {
-//constructor for use with database (Array, not ArrayList)
-//        public TaskListAdapter(Context context, Task[] taskList) {
+        public TaskListAdapter(Context context, Task[] taskList) {
         super(context, 0, taskList);
     }
 

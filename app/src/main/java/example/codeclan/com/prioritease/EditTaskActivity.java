@@ -15,6 +15,7 @@ public class EditTaskActivity extends AppCompatActivity {
     EditText editTaskDetails;
     RadioButton important_urgent, important_nonurgent, unimportant_urgent, unimportant_nonurgent;
     Button saveChangesButton;
+    Task task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,7 @@ public class EditTaskActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_task);
 
         Intent intent = getIntent();
-        Task task = (Task) intent.getSerializableExtra("task");
+        task = (Task) intent.getSerializableExtra("task");
 
         editTaskName = findViewById(R.id.edit_task_name);
         editTaskName.setText(task.getTaskName());
@@ -53,9 +54,13 @@ public class EditTaskActivity extends AppCompatActivity {
 
     public void onSaveChangesClick(View view){
         //TODO update database
-        String taskName = editTaskName.getText().toString();
-        String taskDetails = editTaskDetails.getText().toString();
-        TaskPriority taskPriority = getPriorityFromRadioButton();
+//        String taskName = editTaskName.getText().toString();
+//        String taskDetails = editTaskDetails.getText().toString();
+//        TaskPriority taskPriority = getPriorityFromRadioButton();
+
+        task.setTaskName(editTaskName.getText().toString());
+        task.setTaskDetails(editTaskDetails.getText().toString());
+        task.setPriority(getPriorityFromRadioButton());
 
         Intent intent = new Intent(EditTaskActivity.this, ViewListActivity.class);
         startActivity(intent);
