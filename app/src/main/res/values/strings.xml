@@ -34,4 +34,11 @@
         <item>Unimportant/Urgent</item>
         <item>Unimportant/Non-urgent</item>
     </string-array>
+    <string-array name="edit_priorities_array">
+        <item>-----------Select-----------</item>
+        <item>Important/Urgent</item>
+        <item>Important/Non-urgent</item>
+        <item>Unimportant/Urgent</item>
+        <item>Unimportant/Non-urgent</item>
+    </string-array>
 </resources>

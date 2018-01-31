@@ -4,16 +4,19 @@ import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.*;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-public class EditTaskActivity extends MenuActivity {
+public class EditTaskActivity extends MenuActivity implements AdapterView.OnItemSelectedListener{
 
     EditText editTaskName;
     EditText editTaskDetails;
-    RadioButton important_urgent, important_nonurgent, unimportant_urgent, unimportant_nonurgent;
+    Spinner editPrioritySpinner;
     RadioButton to_do, in_progress, complete;
     Button saveChangesButton;
     Task task;
@@ -23,6 +26,13 @@ public class EditTaskActivity extends MenuActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_task);
+
+        editPrioritySpinner = findViewById(R.id.edit_priority_spinner);
+
+        ArrayAdapter<CharSequence> editSpinnerAdapter = ArrayAdapter.createFromResource(this,
+                R.array.edit_priorities_array, android.R.layout.simple_spinner_item);
+        editSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        editPrioritySpinner.setAdapter(editSpinnerAdapter);
 
         db = Room.databaseBuilder(getApplicationContext(), PrioritEaseDatabase.class, "prioritease database").allowMainThreadQueries().build();
 
@@ -35,11 +45,6 @@ public class EditTaskActivity extends MenuActivity {
 
         editTaskDetails = findViewById(R.id.edit_task_details);
         editTaskDetails.setText(task.getTaskDetails());
-
-        important_urgent = findViewById(R.id.edit_important_urgent_button);
-        important_nonurgent = findViewById(R.id.edit_important_nonurgent_button);
-        unimportant_urgent = findViewById(R.id.edit_unimportant_urgent_button);
-        unimportant_nonurgent = findViewById(R.id.edit_unimportant_nonurgent_button);
 
         to_do = findViewById(R.id.to_do);
         in_progress = findViewById(R.id.in_progress);
@@ -60,27 +65,41 @@ public class EditTaskActivity extends MenuActivity {
             return null;
     }
 
-    public TaskPriority getPriorityFromRadioButton(){
-        if(important_urgent.isChecked()){
-            return TaskPriority.A_IMPORTANT_URGENT;
-        } else if(important_nonurgent.isChecked()){
-            return TaskPriority.C_IMPORTANT_NONURGENT;
-        } else if(unimportant_urgent.isChecked()){
-            return TaskPriority.B_UNIMPORTANT_URGENT;
-        } else if(unimportant_nonurgent.isChecked()){
-            return TaskPriority.D_UNIMPORTANT_NONURGENT;
-        } else
-            return null;
+    //Spinner methods
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String priority = parent.getItemAtPosition(position).toString();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+    }
+
+    public TaskPriority getPriorityFromSpinner(){
+        String selectedPriority = editPrioritySpinner.getSelectedItem().toString();
+        switch(selectedPriority) {
+            case "-----------Select-----------":
+                return null;
+            case "Important/Urgent":
+                return TaskPriority.A_IMPORTANT_URGENT;
+            case "Important/Non-urgent":
+                return TaskPriority.C_IMPORTANT_NONURGENT;
+            case "Unimportant/Urgent":
+                return TaskPriority.B_UNIMPORTANT_URGENT;
+            case "Unimportant/Non-urgent":
+                return TaskPriority.D_UNIMPORTANT_NONURGENT;
+        }
+        return null;
     }
 
     public void onSaveChangesClick(View view){
         task.setTaskName(editTaskName.getText().toString());
         task.setTaskDetails(editTaskDetails.getText().toString());
-        if(getPriorityFromRadioButton() != null){
-            task.setPriority(getPriorityFromRadioButton());
+        if(getPriorityFromSpinner() != null){
+            task.setPriority(getPriorityFromSpinner());
         }
         if(getCompletionStatusFromRadioButton() != null){
-                task.setCompletionStatus(getCompletionStatusFromRadioButton());
+            task.setCompletionStatus(getCompletionStatusFromRadioButton());
         }
 
         db.taskDao().updateTask(task);
