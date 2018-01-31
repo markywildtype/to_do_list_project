@@ -8,4 +8,5 @@
     <color name="important_nonurgent">#a7c7ff</color>
     <color name="unimportant_urgent">#d1aeff</color>
     <color name="unimportant_nonurgent">#d8ffc0</color>
+    <color name="white">#ffffff</color>
 </resources>

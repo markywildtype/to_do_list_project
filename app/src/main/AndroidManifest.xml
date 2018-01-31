@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/prioritease_icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -39,23 +39,17 @@
             android:parentActivityName=".HomeActivity" />
         <activity
             android:name=".ImpUrListActivity"
-            android:parentActivityName=".MatrixActivity">
-
-        </activity>
+            android:parentActivityName=".MatrixActivity"></activity>
         <activity
             android:name=".UnimpUrListActivity"
-            android:parentActivityName=".MatrixActivity">
-
-        </activity>
+            android:parentActivityName=".MatrixActivity"></activity>
         <activity
             android:name=".ImpNonUrListActivity"
-            android:parentActivityName=".MatrixActivity">
-
-        </activity>
-        <activity android:name=".UnimpNonUrListActivity"
-            android:parentActivityName=".MatrixActivity">
-
-        </activity>
+            android:parentActivityName=".MatrixActivity"></activity>
+        <activity
+            android:name=".UnimpNonUrListActivity"
+            android:parentActivityName=".MatrixActivity"></activity>
+        <activity android:name=".ToolBarTestActivity"></activity>
     </application>
 
 </manifest>
