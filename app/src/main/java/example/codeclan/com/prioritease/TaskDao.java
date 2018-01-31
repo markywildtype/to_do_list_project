@@ -39,4 +39,17 @@ public interface TaskDao {
     @Query("DELETE FROM tasks")
     public void deleteAllTasks();
 
+    @Query("SELECT * FROM tasks WHERE taskPriority = 'A_IMPORTANT_URGENT'")
+    public List<Task> getAllImpUrTasks();
+
+    @Query("SELECT * FROM tasks WHERE taskPriority = 'B_IMPORTANT_NONURGENT'")
+    public List<Task> getAllImpNonUrTasks();
+
+    @Query("SELECT * FROM tasks WHERE taskPriority = 'C_UNIMPORTANT_URGENT'")
+    public List<Task> getAllUnimpUrTasks();
+
+    @Query("SELECT * FROM tasks WHERE taskPriority = 'D_UNIMPORTANT_NONURGENT'")
+    public List<Task> getAllUnimpNonUrTasks();
 }
+
+//    WHERE taskPriority = 'A_IMPORTANT_URGENT'

@@ -23,6 +23,10 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
+            case R.id.action_view_matrix:
+                Intent intent3 = new Intent(this, MatrixActivity.class);
+                startActivity(intent3);
+                break;
             case R.id.action_view_list:
                 Intent intent1 = new Intent(this, ViewListActivity.class);
                 startActivity(intent1);

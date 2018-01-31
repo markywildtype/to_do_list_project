@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="example.codeclan.com.prioritease.MatrixActivity">
+
+    <ImageButton
+        android:id="@+id/imp_ur_button"
+        android:layout_width="160dp"
+        android:layout_height="146dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="80dp"
+        android:adjustViewBounds="true"
+        android:background="?android:selectableItemBackground"
+        android:onClick="onClickImpUrButton"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/note_red" />
+
+    <ImageButton
+        android:id="@+id/imp_nonur_button"
+        android:layout_width="160dp"
+        android:layout_height="146dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="80dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:background="?android:selectableItemBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/note_purple" />
+
+    <ImageButton
+        android:id="@+id/unimp_nonur_button"
+        android:layout_width="160dp"
+        android:layout_height="146dp"
+        android:layout_marginBottom="120dp"
+        android:layout_marginStart="32dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:background="?android:selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/note_green" />
+
+    <ImageButton
+        android:id="@+id/unimp_ur_button"
+        android:layout_width="160dp"
+        android:layout_height="146dp"
+        android:layout_marginBottom="120dp"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:background="?android:selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/note_blue" />
+
+</android.support.constraint.ConstraintLayout>

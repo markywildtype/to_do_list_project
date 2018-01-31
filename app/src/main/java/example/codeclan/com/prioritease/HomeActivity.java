@@ -8,8 +8,8 @@ import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
 
-    Button viewListButton;
-    Button newTaskButton;
+    Button viewByPriorityButton, viewListButton, newTaskButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class HomeActivity extends AppCompatActivity {
 
         viewListButton = findViewById(R.id.view_list_button);
         newTaskButton = findViewById(R.id.new_task_button);
+        viewByPriorityButton = findViewById((R.id.view_multiple_lists_button));
     }
 
     public void onAddTaskButtonClicked(View button){
@@ -27,6 +28,11 @@ public class HomeActivity extends AppCompatActivity {
 
     public void onViewListButtonClicked(View button){
         Intent intent = new Intent(this, ViewListActivity.class);
+        startActivity(intent);
+    }
+
+    public void onViewByPriorityButtonClicked(View view){
+        Intent intent = new Intent(this, MatrixActivity.class);
         startActivity(intent);
     }
 

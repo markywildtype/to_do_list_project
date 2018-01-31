@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_view_matrix"
+        android:title="@string/menu_view_matrix">
+
+    </item>
     <item android:id="@+id/action_view_list"
-        android:title="@string/menu_view_list"></item>
+        android:title="@string/menu_view_list">
+
+    </item>
     <item android:id="@+id/action_add_task"
-        android:title="@string/menu_add_task"></item>
+        android:title="@string/menu_add_task">
+
+    </item>
 </menu>

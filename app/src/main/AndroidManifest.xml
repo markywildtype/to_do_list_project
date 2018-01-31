@@ -32,10 +32,12 @@
         <activity
             android:name=".EditTaskActivity"
             android:label="@string/edit_task_title"
-            android:parentActivityName=".ViewListActivity">
-
-        </activity>
-        <activity android:name=".MenuActivity">
+            android:parentActivityName=".ViewListActivity" />
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".MatrixActivity"
+            android:parentActivityName=".HomeActivity"/>
+        <activity android:name=".ImpUrListActivity"
+            android:parentActivityName=".MatrixActivity">
 
         </activity>
     </application>
