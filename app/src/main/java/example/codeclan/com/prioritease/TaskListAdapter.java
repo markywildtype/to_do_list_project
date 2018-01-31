@@ -1,7 +1,7 @@
 package example.codeclan.com.prioritease;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,12 +20,33 @@ class TaskListAdapter extends ArrayAdapter<Task>{
         super(context, 0, taskList);
     }
 
+
+
     public View getView(int position, View listItemView, ViewGroup parent) {
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.activity_task_list_item, parent, false);
         }
 
         Task currentTask = getItem(position);
+
+
+
+        if(currentTask.taskPriority == TaskPriority.A_IMPORTANT_URGENT){
+            int impUr = Color.parseColor("#ff959c");
+            listItemView.setBackgroundColor(impUr);
+        } else if(currentTask.taskPriority == TaskPriority.C_UNIMPORTANT_URGENT){
+            int unimpUr = Color.parseColor("#a7c7ff");
+            listItemView.setBackgroundColor(unimpUr);
+        } else if(currentTask.taskPriority == TaskPriority.B_IMPORTANT_NONURGENT){
+            int impNon = Color.parseColor("#d1aeff");
+            listItemView.setBackgroundColor(impNon);
+        } else if (currentTask.taskPriority == TaskPriority.D_UNIMPORTANT_NONURGENT){
+            int unimpNon = Color.parseColor("#d8ffc0");
+            listItemView.setBackgroundColor(unimpNon);
+        }
+
+
+
 
         TextView taskName = listItemView.findViewById(R.id.list_item_task_name);
         taskName.setText(currentTask.getTaskName());

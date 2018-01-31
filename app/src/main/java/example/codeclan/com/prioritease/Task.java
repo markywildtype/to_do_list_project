@@ -32,7 +32,6 @@ public class Task implements Serializable{
         this.taskPriority = taskPriority;
     }
 
-
 //Getters
 
     public int getId(){
@@ -126,9 +125,9 @@ public class Task implements Serializable{
     }
 
     public String getPriorityAsString(){
-        if(taskPriority == TaskPriority.C_IMPORTANT_NONURGENT){
+        if(taskPriority == TaskPriority.B_IMPORTANT_NONURGENT){
             return "Important/Non-urgent";
-        } else if(taskPriority == TaskPriority.B_UNIMPORTANT_URGENT) {
+        } else if(taskPriority == TaskPriority.C_UNIMPORTANT_URGENT) {
             return "Unimportant/Urgent";
         } else if(taskPriority == TaskPriority.D_UNIMPORTANT_NONURGENT) {
             return "Unimportant/Non-urgent";

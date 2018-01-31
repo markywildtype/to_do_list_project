@@ -8,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -58,9 +57,9 @@ public class AddTaskActivity extends MenuActivity implements AdapterView.OnItemS
             case "Important/Urgent":
                 return TaskPriority.A_IMPORTANT_URGENT;
             case "Important/Non-urgent":
-                return TaskPriority.C_IMPORTANT_NONURGENT;
+                return TaskPriority.B_IMPORTANT_NONURGENT;
             case "Unimportant/Urgent":
-                return TaskPriority.B_UNIMPORTANT_URGENT;
+                return TaskPriority.C_UNIMPORTANT_URGENT;
             case "Unimportant/Non-urgent":
                 return TaskPriority.D_UNIMPORTANT_NONURGENT;
         }

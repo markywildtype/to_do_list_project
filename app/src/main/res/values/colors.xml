@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#585858</color>
     <color name="background">#fff7b7</color>
+    <color name="important_urgent">#ff959c</color>
+    <color name="important_nonurgent">#a7c7ff</color>
+    <color name="unimportant_urgent">#d1aeff</color>
+    <color name="unimportant_nonurgent">#d8ffc0</color>
 </resources>

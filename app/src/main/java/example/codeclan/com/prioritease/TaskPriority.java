@@ -7,8 +7,8 @@ package example.codeclan.com.prioritease;
 enum TaskPriority {
 
     A_IMPORTANT_URGENT,
-    B_UNIMPORTANT_URGENT,
-    C_IMPORTANT_NONURGENT,
+    B_IMPORTANT_NONURGENT,
+    C_UNIMPORTANT_URGENT,
     D_UNIMPORTANT_NONURGENT
 
 }

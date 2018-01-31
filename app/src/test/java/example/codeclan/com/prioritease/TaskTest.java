@@ -18,10 +18,10 @@ public class TaskTest {
 
     @Before
     public void before(){
-        task = new Task("Do shopping", "Milk, eggs, bread", TaskPriority.B_UNIMPORTANT_URGENT, Complete.TO_DO);
-        task2 = new Task("Eat Dinner", "Milk, eggs, bread", TaskPriority.B_UNIMPORTANT_URGENT, Complete.IN_PROGRESS);
-        task3 = new Task("Do shopping", "Milk, eggs, bread", TaskPriority.B_UNIMPORTANT_URGENT, Complete.COMPLETE);
-        task4 = new Task("Do shopping", "Milk, eggs, bread", TaskPriority.B_UNIMPORTANT_URGENT, Complete.TO_DO);
+        task = new Task("Do shopping", "Milk, eggs, bread", TaskPriority.C_UNIMPORTANT_URGENT, Complete.TO_DO);
+        task2 = new Task("Eat Dinner", "Milk, eggs, bread", TaskPriority.C_UNIMPORTANT_URGENT, Complete.IN_PROGRESS);
+        task3 = new Task("Do shopping", "Milk, eggs, bread", TaskPriority.C_UNIMPORTANT_URGENT, Complete.COMPLETE);
+        task4 = new Task("Do shopping", "Milk, eggs, bread", TaskPriority.C_UNIMPORTANT_URGENT, Complete.TO_DO);
     }
 
     @Test
@@ -65,7 +65,7 @@ public class TaskTest {
 
     @Test
     public void hasPriority(){
-        assertEquals(TaskPriority.B_UNIMPORTANT_URGENT, task.getTaskPriority());
+        assertEquals(TaskPriority.C_UNIMPORTANT_URGENT, task.getTaskPriority());
     }
 
     @Test
