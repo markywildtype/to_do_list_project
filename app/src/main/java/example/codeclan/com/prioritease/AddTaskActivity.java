@@ -4,17 +4,20 @@ import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
-public class AddTaskActivity extends MenuActivity {
+public class AddTaskActivity extends MenuActivity implements AdapterView.OnItemSelectedListener{
 
     EditText taskName, taskDetails;
     RadioGroup priority;
-    RadioButton important_urgent, important_nonurgent, unimportant_urgent, unimportant_nonurgent;
+    Spinner prioritySpinner;
     Button submitNewTask;
     PrioritEaseDatabase db;
 
@@ -26,33 +29,49 @@ public class AddTaskActivity extends MenuActivity {
         taskName = findViewById(R.id.task_name);
         taskDetails = findViewById(R.id.task_details);
         priority = findViewById(R.id.priority);
-        important_urgent = findViewById(R.id.important_urgent_button);
-        important_nonurgent = findViewById(R.id.important_nonurgent_button);
-        unimportant_urgent = findViewById(R.id.unimportant_urgent_button);
-        unimportant_nonurgent = findViewById(R.id.unimportant_nonurgent_button);
+        prioritySpinner = findViewById(R.id.priority_spinner);
         submitNewTask = findViewById(R.id.submit_new_task_button);
+
+
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this,
+                R.array.priorities_array, android.R.layout.simple_spinner_item);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        prioritySpinner.setAdapter(spinnerAdapter);
 
         db = Room.databaseBuilder(getApplicationContext(), PrioritEaseDatabase.class, "prioritease database").allowMainThreadQueries().build();
 
     }
 
-    public TaskPriority getPriorityFromRadioButton(){
-        if(important_urgent.isChecked()){
-            return TaskPriority.A_IMPORTANT_URGENT;
-        } else if(important_nonurgent.isChecked()){
-            return TaskPriority.C_IMPORTANT_NONURGENT;
-        } else if(unimportant_urgent.isChecked()){
-            return TaskPriority.B_UNIMPORTANT_URGENT;
-        } else if(unimportant_nonurgent.isChecked()){
-            return TaskPriority.D_UNIMPORTANT_NONURGENT;
-        } else
-            return null;
+    //Spinner methods
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String priority = parent.getItemAtPosition(position).toString();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+    }
+
+    public TaskPriority getPriorityFromSpinner(){
+        String selectedPriority = prioritySpinner.getSelectedItem().toString();
+        switch(selectedPriority) {
+            case "Important/Urgent":
+                return TaskPriority.A_IMPORTANT_URGENT;
+            case "Important/Non-urgent":
+                return TaskPriority.C_IMPORTANT_NONURGENT;
+            case "Unimportant/Urgent":
+                return TaskPriority.B_UNIMPORTANT_URGENT;
+            case "Unimportant/Non-urgent":
+                return TaskPriority.D_UNIMPORTANT_NONURGENT;
+        }
+        return null;
     }
 
     public void onSubmitButtonClicked(View view){
         String newTask = taskName.getText().toString();
         String details = taskDetails.getText().toString();
-        TaskPriority taskPriority = getPriorityFromRadioButton();
+        TaskPriority taskPriority = getPriorityFromSpinner();
+
         Task task = new Task(newTask, details, taskPriority, Complete.TO_DO);
 
         db.taskDao().addTask(task);

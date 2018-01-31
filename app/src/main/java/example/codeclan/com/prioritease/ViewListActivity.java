@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -91,7 +92,7 @@ public class ViewListActivity extends MenuActivity {
     }
 
     public void onSortPriorityClick(View view) {
-        switch (sortPriority) {
+        switch(sortPriority) {
             case 0:
                 Collections.sort(allTasks, Task.TaskPriorityComparatorDesc);
                 sortPriority = 1;
@@ -104,4 +105,5 @@ public class ViewListActivity extends MenuActivity {
                 break;
         }
     }
+
 }

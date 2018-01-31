@@ -72,53 +72,55 @@
             app:layout_constraintHorizontal_bias="0.426"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/task_name"
-            app:layout_constraintVertical_bias="0.06"></EditText>
+            app:layout_constraintVertical_bias="0.06">
+
+        </EditText>
     </android.support.design.widget.TextInputLayout>
 
-    <RadioGroup
-        android:id="@+id/priority"
-        android:layout_width="231dp"
-        android:layout_height="125dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.211"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.953">
+    <!--<RadioGroup-->
+        <!--android:id="@+id/priority"-->
+        <!--android:layout_width="231dp"-->
+        <!--android:layout_height="125dp"-->
+        <!--android:layout_marginBottom="32dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.211"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintVertical_bias="0.953">-->
 
-        <RadioButton
-            android:id="@+id/important_urgent_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:checked="true"
-            android:text="@string/important_urgent" />
+        <!--<RadioButton-->
+            <!--android:id="@+id/important_urgent_button"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:checked="true"-->
+            <!--android:text="@string/important_urgent" />-->
 
-        <RadioButton
-            android:id="@+id/unimportant_urgent_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/unimportant_urgent" />
+        <!--<RadioButton-->
+            <!--android:id="@+id/unimportant_urgent_button"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="@string/unimportant_urgent" />-->
 
-        <RadioButton
-            android:id="@+id/important_nonurgent_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/important_nonurgent" />
+        <!--<RadioButton-->
+            <!--android:id="@+id/important_nonurgent_button"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="@string/important_nonurgent" />-->
 
-        <RadioButton
-            android:id="@+id/unimportant_nonurgent_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/unimportant_nonurgent" />
-    </RadioGroup>
+        <!--<RadioButton-->
+            <!--android:id="@+id/unimportant_nonurgent_button"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="@string/unimportant_nonurgent" />-->
+    <!--</RadioGroup>-->
 
     <Button
         android:id="@+id/submit_new_task_button"
@@ -134,6 +136,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/priority"
         app:layout_constraintVertical_bias="0.27" />
+
+    <Spinner
+        android:id="@+id/priority_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/submit_new_task_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textContainer" />
+
+    <TextView
+        android:id="@+id/spinner_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/spinner_label"
+        android:textColor="@color/colorAccent"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/priority_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
