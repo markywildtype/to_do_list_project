@@ -32,8 +32,12 @@
         <activity
             android:name=".EditTaskActivity"
             android:label="@string/edit_task_title"
-            android:parentActivityName=".ViewListActivity"></activity>
-        <activity android:name=".MenuActivity"></activity>
+            android:parentActivityName=".ViewListActivity">
+
+        </activity>
+        <activity android:name=".MenuActivity">
+
+        </activity>
     </application>
 
 </manifest>

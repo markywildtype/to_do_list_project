@@ -30,13 +30,13 @@ public class TaskDetailsActivity extends MenuActivity {
         task = (Task) intent.getSerializableExtra("task");
 
         taskName = findViewById(R.id.task_details_task_name);
-        taskName.setText(task.getTaskName());
+        taskName.setText("Task Name: " + task.getTaskName());
 
         taskPriority = findViewById(R.id.task_details_priority);
-        taskPriority.setText(task.getPriorityAsString());
+        taskPriority.setText("Priority: " + task.getPriorityAsString());
 
         taskCompletionStatus = findViewById(R.id.task_details_completion_status);
-        taskCompletionStatus.setText(task.getCompletionStatusAsString());
+        taskCompletionStatus.setText("Status: " + task.getCompletionStatusAsString());
 
         taskDetails = findViewById(R.id.task_details_task_details);
         taskDetails.setText(task.getTaskDetails());
