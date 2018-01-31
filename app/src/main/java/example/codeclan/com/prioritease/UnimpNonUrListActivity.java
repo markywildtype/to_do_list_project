@@ -10,30 +10,29 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImpNonUrListActivity extends AppCompatActivity {
+public class UnimpNonUrListActivity extends AppCompatActivity {
     List<Task> allTasksAsList;
-    ArrayList<Task> allImpNonUrTasks;
+    ArrayList<Task> allUnimpNonUrTasks;
     TaskListAdapter taskListAdapter;
 //    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_imp_non_ur_list);
+        setContentView(R.layout.activity_unimp_non_ur_list);
 
-        allImpNonUrTasks = new ArrayList<>();
+        allUnimpNonUrTasks = new ArrayList<>();
 
         //Database
         PrioritEaseDatabase db = Room.databaseBuilder(getApplicationContext(), PrioritEaseDatabase.class, "prioritease database").allowMainThreadQueries().build();
 
-        allTasksAsList = db.taskDao().getAllImpNonUrTasks();
-        allImpNonUrTasks.addAll(new ArrayList<>(allTasksAsList));
+        allTasksAsList = db.taskDao().getAllUnimpNonUrTasks();
+        allUnimpNonUrTasks.addAll(new ArrayList<>(allTasksAsList));
 
 
 //ListView and Adapter
-        taskListAdapter = new TaskListAdapter(this, allImpNonUrTasks);
-
-        ListView listView = findViewById(R.id.imp_non_ur_list_view);
+        taskListAdapter = new TaskListAdapter(this, allUnimpNonUrTasks);
+        ListView listView = findViewById(R.id.unimp_non_ur_list_view);
         listView.setAdapter(taskListAdapter);
 
 //fab not working?

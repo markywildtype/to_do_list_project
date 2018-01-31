@@ -27,8 +27,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="80dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
         android:background="?android:selectableItemBackground"
+        android:onClick="onClickImpNonUrButton"
+        android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/note_purple" />
@@ -40,8 +41,9 @@
         android:layout_marginBottom="120dp"
         android:layout_marginStart="32dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
         android:background="?android:selectableItemBackground"
+        android:onClick="onClickUnimpNonUrButton"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/note_green" />
@@ -53,10 +55,71 @@
         android:layout_marginBottom="120dp"
         android:layout_marginEnd="16dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
         android:background="?android:selectableItemBackground"
+        android:onClick="onClickUnimpUrButton"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/note_blue" />
+
+    <TextView
+        android:id="@+id/i_n_count"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/imp_nonur_button"
+        app:layout_constraintEnd_toEndOf="@+id/imp_nonur_button"
+        app:layout_constraintStart_toStartOf="@+id/imp_nonur_button"
+        app:layout_constraintTop_toTopOf="@+id/imp_nonur_button" />
+
+    <TextView
+        android:id="@+id/i_u_count"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/imp_ur_button"
+        app:layout_constraintEnd_toEndOf="@+id/imp_ur_button"
+        app:layout_constraintStart_toStartOf="@+id/imp_ur_button"
+        app:layout_constraintTop_toTopOf="@+id/imp_ur_button" />
+
+    <TextView
+        android:id="@+id/u_n_count"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/unimp_nonur_button"
+        app:layout_constraintEnd_toEndOf="@+id/unimp_nonur_button"
+        app:layout_constraintStart_toStartOf="@+id/unimp_nonur_button"
+        app:layout_constraintTop_toTopOf="@+id/unimp_nonur_button" />
+
+    <TextView
+        android:id="@+id/u_u_count"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/unimp_ur_button"
+        app:layout_constraintEnd_toEndOf="@+id/unimp_ur_button"
+        app:layout_constraintStart_toStartOf="@+id/unimp_ur_button"
+        app:layout_constraintTop_toTopOf="@+id/unimp_ur_button" />
 
 </android.support.constraint.ConstraintLayout>

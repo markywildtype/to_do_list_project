@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="example.codeclan.com.prioritease.ImpUrListActivity">
+    tools:context="example.codeclan.com.prioritease.UnimpUrListActivity">
 
     <TextView
-        android:id="@+id/name_header5"
+        android:id="@+id/name_header4"
         android:layout_width="102dp"
         android:layout_height="33dp"
         android:layout_marginBottom="8dp"
@@ -26,7 +26,7 @@
         app:layout_constraintVertical_bias="0.103" />
 
     <TextView
-        android:id="@+id/status_header5"
+        android:id="@+id/status_header4"
         android:layout_width="102dp"
         android:layout_height="33dp"
         android:layout_marginBottom="8dp"
@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="0.103" />
 
     <TextView
-        android:id="@+id/priority_header5"
+        android:id="@+id/priority_header4"
         android:layout_width="102dp"
         android:layout_height="33dp"
         android:layout_marginBottom="8dp"
@@ -63,15 +63,12 @@
         app:layout_constraintVertical_bias="0.103" />
 
     <ListView
-        android:id="@+id/imp_ur_list_view"
+        android:id="@+id/unimp_ur_list_view"
         android:layout_width="368dp"
         android:layout_height="460dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.836">
-
-    </ListView>
-
+        app:layout_constraintVertical_bias="1.0" />
 </android.support.constraint.ConstraintLayout>

@@ -34,9 +34,25 @@
             android:label="@string/edit_task_title"
             android:parentActivityName=".ViewListActivity" />
         <activity android:name=".MenuActivity" />
-        <activity android:name=".MatrixActivity"
-            android:parentActivityName=".HomeActivity"/>
-        <activity android:name=".ImpUrListActivity"
+        <activity
+            android:name=".MatrixActivity"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".ImpUrListActivity"
+            android:parentActivityName=".MatrixActivity">
+
+        </activity>
+        <activity
+            android:name=".UnimpUrListActivity"
+            android:parentActivityName=".MatrixActivity">
+
+        </activity>
+        <activity
+            android:name=".ImpNonUrListActivity"
+            android:parentActivityName=".MatrixActivity">
+
+        </activity>
+        <activity android:name=".UnimpNonUrListActivity"
             android:parentActivityName=".MatrixActivity">
 
         </activity>
