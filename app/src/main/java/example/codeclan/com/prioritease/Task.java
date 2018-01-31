@@ -87,15 +87,6 @@ public class Task implements Serializable{
             return taskStatus1.compareTo(taskStatus2);
         }};
 
-    public static Comparator<Task> TaskPriorityComparatorDesc = new Comparator<Task>() {
-
-        public int compare(Task task1, Task task2) {
-            String taskPriority1 = task1.getTaskPriority().name();
-            String taskPriority2 = task2.getTaskPriority().name();
-
-            return taskPriority1.compareTo(taskPriority2);
-        }};
-
     public static Comparator<Task> TaskStatusComparatorAsc = new Comparator<Task>() {
 
         public int compare(Task task1, Task task2) {
@@ -103,6 +94,16 @@ public class Task implements Serializable{
             String taskStatus2 = task2.getCompletionStatusAsString();
 
             return taskStatus2.compareTo(taskStatus1);
+        }};
+
+
+    public static Comparator<Task> TaskPriorityComparatorDesc = new Comparator<Task>() {
+
+        public int compare(Task task1, Task task2) {
+            String taskPriority1 = task1.getTaskPriority().name();
+            String taskPriority2 = task2.getTaskPriority().name();
+
+            return taskPriority1.compareTo(taskPriority2);
         }};
 
     public static Comparator<Task> TaskPriorityComparatorAsc = new Comparator<Task>() {

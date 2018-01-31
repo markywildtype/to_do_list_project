@@ -80,7 +80,7 @@ public class TaskTest {
     }
 
     @Test
-    public void canSortTaskArrayListByStatus(){
+    public void canSortTaskArrayListByStatusDesc(){
         ArrayList<Task> testArray = new ArrayList<>();
         ArrayList<Task> expectedArray = new ArrayList<>();
         testArray.add(task);
@@ -91,9 +91,25 @@ public class TaskTest {
         expectedArray.add(task2);
         expectedArray.add(task);
         expectedArray.add(task4);
+
         Collections.sort(testArray, Task.TaskStatusComparatorDesc);
         assertEquals(expectedArray.toString(), testArray.toString());
+
     }
+    @Test
+    public void canSortTaskArrayListByStatusAsc() {
+        ArrayList<Task> testArray = new ArrayList<>();
+        ArrayList<Task> expectedArray2 = new ArrayList<>();
+        testArray.add(task);
+        testArray.add(task2);
+        testArray.add(task3);
+        testArray.add(task4);
+        expectedArray2.add(task4);
+        expectedArray2.add(task);
+        expectedArray2.add(task2);
+        expectedArray2.add(task3);
 
-
+        Collections.sort(testArray, Task.TaskPriorityComparatorAsc);
+        assertEquals(expectedArray2.toString(), testArray.toString());
+    }
 }
