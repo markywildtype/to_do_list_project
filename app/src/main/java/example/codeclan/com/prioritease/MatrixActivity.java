@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MatrixActivity extends MenuActivity {
 
     ImageButton impUrButton, impNonUrButton, unimpUrButton, unimpNonUrButton;
@@ -31,10 +33,16 @@ public class MatrixActivity extends MenuActivity {
 
         PrioritEaseDatabase db = Room.databaseBuilder(getApplicationContext(), PrioritEaseDatabase.class, "prioritease database").allowMainThreadQueries().build();
 
-//        iNCount.setText(db.taskDao().getAllUnimpNonUrTasks().size());
-//        iUCount.setText(db.taskDao().getAllImpUrTasks().size());
-//        uNCount.setText(db.taskDao().getAllUnimpNonUrTasks().size());
-//        uUCount.setText(db.taskDao().getAllUnimpUrTasks().size());
+        String iN = Integer.toString(db.taskDao().getAllImpNonUrTasks().size());
+        String iU = Integer.toString(db.taskDao().getAllImpUrTasks().size());
+        String uN = Integer.toString(db.taskDao().getAllUnimpNonUrTasks().size());
+        String uU = Integer.toString(db.taskDao().getAllUnimpUrTasks().size());
+
+        iNCount.setText("Tasks: " + iN);
+        iUCount.setText("Tasks: " + iU);
+        uNCount.setText("Tasks: " + uN);
+        uUCount.setText("Tasks: " + uU);
+
     }
 
     public void onClickImpUrButton(View view){
