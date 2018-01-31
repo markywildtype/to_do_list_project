@@ -2,9 +2,9 @@ package example.codeclan.com.prioritease;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toolbar;
+import android.support.v7.widget.Toolbar;
 
-public class ToolBarTestActivity extends AppCompatActivity {
+public class ToolBarTestActivity extends MenuActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,5 +13,7 @@ public class ToolBarTestActivity extends AppCompatActivity {
 
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
     }
 }

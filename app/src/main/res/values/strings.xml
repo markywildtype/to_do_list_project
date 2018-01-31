@@ -30,6 +30,7 @@
     <string name="sort">Sort</string>
     <string name="details">Details:</string>
     <string name="spinner_label">Task Priority</string>
+    <string name="prioritease_icon">prioritease_icon</string>
     <string-array name="priorities_array">
         <item>Important/Urgent</item>
         <item>Important/Non-urgent</item>

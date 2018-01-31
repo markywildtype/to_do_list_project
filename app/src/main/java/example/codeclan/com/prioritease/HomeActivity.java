@@ -10,6 +10,7 @@ public class HomeActivity extends AppCompatActivity {
 
     Button viewByPriorityButton, viewListButton, newTaskButton;
 
+    Button toolBarTestButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,12 @@ public class HomeActivity extends AppCompatActivity {
 
     public void onViewByPriorityButtonClicked(View view){
         Intent intent = new Intent(this, MatrixActivity.class);
+        startActivity(intent);
+    }
+
+//Toolbar test
+    public void onToolBarTestButtonClicked(View view){
+        Intent intent = new Intent(this, ToolBarTestActivity.class);
         startActivity(intent);
     }
 

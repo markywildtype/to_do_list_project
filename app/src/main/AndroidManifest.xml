@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--android:theme="@style/AppTheme.NoActionBar">-->
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,17 +40,18 @@
             android:parentActivityName=".HomeActivity" />
         <activity
             android:name=".ImpUrListActivity"
-            android:parentActivityName=".MatrixActivity"></activity>
+            android:parentActivityName=".MatrixActivity"/>
         <activity
             android:name=".UnimpUrListActivity"
-            android:parentActivityName=".MatrixActivity"></activity>
+            android:parentActivityName=".MatrixActivity"/>
         <activity
             android:name=".ImpNonUrListActivity"
-            android:parentActivityName=".MatrixActivity"></activity>
+            android:parentActivityName=".MatrixActivity"/>
         <activity
             android:name=".UnimpNonUrListActivity"
-            android:parentActivityName=".MatrixActivity"></activity>
-        <activity android:name=".ToolBarTestActivity"></activity>
+            android:parentActivityName=".MatrixActivity"/>
+        <!--<activity android:name=".ToolBarTestActivity"-->
+            <!--android:parentActivityName=".HomeActivity"/>-->
     </application>
 
 </manifest>
