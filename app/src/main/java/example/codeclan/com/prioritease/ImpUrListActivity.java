@@ -16,7 +16,7 @@ public class ImpUrListActivity extends MenuActivity {
     List<Task> allTasksAsList;
     ArrayList<Task> allImpUrTasks;
     TaskListAdapter taskListAdapter;
-//    FloatingActionButton fab;
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,14 +39,14 @@ public class ImpUrListActivity extends MenuActivity {
 
 //fab not working?
 //Floating Action Button
-//        fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view){
-//                Intent intent = new Intent(ImpUrListActivity.this, AddTaskActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        fab = findViewById(R.id.fab_i_u);
+        fab.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(ImpUrListActivity.this, AddTaskActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void onListItemClick(View listItem){

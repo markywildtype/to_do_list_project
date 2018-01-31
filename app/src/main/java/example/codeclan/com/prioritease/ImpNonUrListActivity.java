@@ -2,6 +2,7 @@ package example.codeclan.com.prioritease;
 
 import android.arch.persistence.room.Room;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,7 @@ public class ImpNonUrListActivity extends AppCompatActivity {
     List<Task> allTasksAsList;
     ArrayList<Task> allImpNonUrTasks;
     TaskListAdapter taskListAdapter;
-//    FloatingActionButton fab;
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +37,15 @@ public class ImpNonUrListActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.imp_non_ur_list_view);
         listView.setAdapter(taskListAdapter);
 
-//fab not working?
 //Floating Action Button
-//        fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view){
-//                Intent intent = new Intent(ImpUrListActivity.this, AddTaskActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        fab = findViewById(R.id.fab_i_n);
+        fab.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(ImpNonUrListActivity.this, AddTaskActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void onListItemClick(View listItem) {
