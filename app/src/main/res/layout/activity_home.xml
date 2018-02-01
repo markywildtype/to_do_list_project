@@ -60,24 +60,4 @@
         app:srcCompat="@drawable/add_new_task_button" />
 
 
-    <!--<android.support.v7.widget.Toolbar-->
-    <!--android:id="@+id/my_toolbar2"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="?attr/actionBarSize"-->
-    <!--android:background="?attr/colorPrimary"-->
-    <!--android:minHeight="?attr/actionBarSize"-->
-    <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
-    <!--tools:layout_editor_absoluteX="0dp"-->
-    <!--tools:layout_editor_absoluteY="0dp">-->
-
-    <!--<ImageView-->
-    <!--android:id="@+id/icon"-->
-    <!--android:layout_width="150dp"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:contentDescription="@string/prioritease_icon"-->
-    <!--android:src="@drawable/prioritease_text_logo"-->
-    <!--tools:layout_editor_absoluteX="16dp" />-->
-    <!--</android.support.v7.widget.Toolbar>-->
-
-
 </android.support.constraint.ConstraintLayout>

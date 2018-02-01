@@ -7,62 +7,6 @@
     android:background="@drawable/prioritease_background_tall"
     tools:context="example.codeclan.com.prioritease.UnimpUrListActivity">
 
-    <!--<TextView-->
-    <!--android:id="@+id/name_header4"-->
-    <!--android:layout_width="102dp"-->
-    <!--android:layout_height="33dp"-->
-    <!--android:layout_marginBottom="8dp"-->
-    <!--android:layout_marginEnd="8dp"-->
-    <!--android:layout_marginStart="8dp"-->
-    <!--android:layout_marginTop="8dp"-->
-    <!--android:text="@string/name_header"-->
-    <!--android:textAlignment="center"-->
-    <!--android:textSize="18sp"-->
-    <!--android:textStyle="bold"-->
-    <!--app:layout_constraintBottom_toTopOf="@+id/task_list_view"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintHorizontal_bias="0.03"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--app:layout_constraintVertical_bias="0.103" />-->
-
-    <!--<TextView-->
-    <!--android:id="@+id/status_header4"-->
-    <!--android:layout_width="102dp"-->
-    <!--android:layout_height="33dp"-->
-    <!--android:layout_marginBottom="8dp"-->
-    <!--android:layout_marginEnd="8dp"-->
-    <!--android:layout_marginStart="8dp"-->
-    <!--android:layout_marginTop="8dp"-->
-    <!--android:text="@string/status_header"-->
-    <!--android:textAlignment="center"-->
-    <!--android:textSize="18sp"-->
-    <!--android:textStyle="bold"-->
-    <!--app:layout_constraintBottom_toTopOf="@+id/task_list_view"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--app:layout_constraintVertical_bias="0.103" />-->
-
-    <!--<TextView-->
-    <!--android:id="@+id/priority_header4"-->
-    <!--android:layout_width="102dp"-->
-    <!--android:layout_height="33dp"-->
-    <!--android:layout_marginBottom="8dp"-->
-    <!--android:layout_marginEnd="8dp"-->
-    <!--android:layout_marginStart="8dp"-->
-    <!--android:layout_marginTop="8dp"-->
-    <!--android:text="@string/priority_header"-->
-    <!--android:textAlignment="textStart"-->
-    <!--android:textSize="18sp"-->
-    <!--android:textStyle="bold"-->
-    <!--app:layout_constraintBottom_toTopOf="@+id/task_list_view"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintHorizontal_bias="0.969"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--app:layout_constraintVertical_bias="0.103" />-->
-
     <ImageView
         android:id="@+id/task_name_header5"
         android:layout_width="127dp"

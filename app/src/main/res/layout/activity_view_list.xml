@@ -39,89 +39,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <!--<TextView-->
-    <!--android:id="@+id/name_header"-->
-    <!--android:layout_width="102dp"-->
-    <!--android:layout_height="33dp"-->
-    <!--android:layout_marginBottom="8dp"-->
-    <!--android:layout_marginEnd="8dp"-->
-    <!--android:layout_marginStart="8dp"-->
-    <!--android:layout_marginTop="8dp"-->
-    <!--android:text="@string/name_header"-->
-    <!--android:textAlignment="center"-->
-    <!--android:textSize="18sp"-->
-    <!--android:textStyle="bold"-->
-    <!--app:layout_constraintBottom_toTopOf="@+id/task_list_view"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintHorizontal_bias="0.03"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--app:layout_constraintVertical_bias="0.103" />-->
-
-    <!--<TextView-->
-    <!--android:id="@+id/priority_header"-->
-    <!--android:layout_width="102dp"-->
-    <!--android:layout_height="33dp"-->
-    <!--android:layout_marginBottom="8dp"-->
-    <!--android:layout_marginEnd="8dp"-->
-    <!--android:layout_marginStart="8dp"-->
-    <!--android:layout_marginTop="8dp"-->
-    <!--android:text="@string/priority_header"-->
-    <!--android:textAlignment="textStart"-->
-    <!--android:textSize="18sp"-->
-    <!--android:textStyle="bold"-->
-    <!--app:layout_constraintBottom_toTopOf="@+id/task_list_view"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintHorizontal_bias="0.969"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--app:layout_constraintVertical_bias="0.103" />-->
-
-    <!--<TextView-->
-    <!--android:id="@+id/status_header"-->
-    <!--android:layout_width="102dp"-->
-    <!--android:layout_height="33dp"-->
-    <!--android:layout_marginBottom="8dp"-->
-    <!--android:layout_marginEnd="8dp"-->
-    <!--android:layout_marginStart="8dp"-->
-    <!--android:layout_marginTop="8dp"-->
-    <!--android:text="@string/status_header"-->
-    <!--android:textAlignment="center"-->
-    <!--android:textSize="18sp"-->
-    <!--android:textStyle="bold"-->
-    <!--app:layout_constraintBottom_toTopOf="@+id/task_list_view"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--app:layout_constraintVertical_bias="0.103" />-->
-
-    <!--<Button-->
-    <!--android:id="@+id/sort_status_button"-->
-    <!--android:layout_width="102dp"-->
-    <!--android:layout_height="40dp"-->
-    <!--android:layout_marginEnd="8dp"-->
-    <!--android:layout_marginStart="8dp"-->
-    <!--android:layout_marginTop="8dp"-->
-    <!--android:onClick="onSortStatusClick"-->
-    <!--android:text="@string/sort"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintTop_toBottomOf="@+id/status_header" />-->
-
-    <!--<Button-->
-    <!--android:id="@+id/sort_priority_button"-->
-    <!--android:layout_width="102dp"-->
-    <!--android:layout_height="40dp"-->
-    <!--android:layout_marginEnd="8dp"-->
-    <!--android:layout_marginStart="8dp"-->
-    <!--android:layout_marginTop="8dp"-->
-    <!--android:onClick="onSortPriorityClick"-->
-    <!--android:text="@string/sort"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintHorizontal_bias="0.969"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintTop_toBottomOf="@+id/priority_header" />-->
-
     <ImageView
         android:id="@+id/task_name_header"
         android:layout_width="127dp"
@@ -131,29 +48,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/task_name_header" />
-
-    <!--<ImageView-->
-    <!--android:id="@+id/status_header"-->
-    <!--android:layout_width="107dp"-->
-    <!--android:layout_height="22dp"-->
-    <!--android:layout_marginEnd="8dp"-->
-    <!--android:layout_marginStart="8dp"-->
-    <!--android:layout_marginTop="12dp"-->
-    <!--app:layout_constraintEnd_toStartOf="@+id/priority_header"-->
-    <!--app:layout_constraintHorizontal_bias="0.631"-->
-    <!--app:layout_constraintStart_toEndOf="@+id/task_name_header"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--app:srcCompat="@drawable/status_header" />-->
-
-    <!--<ImageView-->
-    <!--android:id="@+id/priority_header"-->
-    <!--android:layout_width="121dp"-->
-    <!--android:layout_height="22dp"-->
-    <!--android:layout_marginEnd="16dp"-->
-    <!--android:layout_marginTop="12dp"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--app:srcCompat="@drawable/priority_header" />-->
 
     <ImageButton
         android:id="@+id/status_sort_image_button"

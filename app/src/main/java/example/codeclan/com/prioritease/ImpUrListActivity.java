@@ -37,7 +37,7 @@ public class ImpUrListActivity extends MenuActivity {
         ListView listView = findViewById(R.id.imp_ur_list_view);
         listView.setAdapter(taskListAdapter);
 
-//fab not working?
+
 //Floating Action Button
         fab = findViewById(R.id.fab_i_u);
         fab.setOnClickListener(new View.OnClickListener(){

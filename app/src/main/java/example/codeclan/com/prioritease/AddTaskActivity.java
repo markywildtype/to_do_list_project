@@ -2,6 +2,7 @@ package example.codeclan.com.prioritease;
 
 import android.arch.persistence.room.Room;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -16,9 +18,8 @@ import android.widget.Toast;
 public class AddTaskActivity extends MenuActivity implements AdapterView.OnItemSelectedListener{
 
     EditText taskName, taskDetails;
-    RadioGroup priority;
     Spinner prioritySpinner;
-    Button submitNewTask;
+    ImageButton submitNewTask;
     PrioritEaseDatabase db;
 
     @Override
@@ -32,13 +33,11 @@ public class AddTaskActivity extends MenuActivity implements AdapterView.OnItemS
 
         taskName = findViewById(R.id.task_name);
         taskDetails = findViewById(R.id.task_details);
-        priority = findViewById(R.id.priority);
         prioritySpinner = findViewById(R.id.priority_spinner);
-        submitNewTask = findViewById(R.id.submit_new_task_button);
+        submitNewTask = findViewById(R.id.add_task_image_button);
 
 
-        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this,
-                R.array.priorities_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this, R.array.priorities_array, android.R.layout.simple_spinner_item);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         prioritySpinner.setAdapter(spinnerAdapter);
 

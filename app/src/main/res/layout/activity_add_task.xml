@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="18dp"
     android:background="@drawable/prioritease_background_tall"
+    android:padding="18dp"
     tools:context="example.codeclan.com.prioritease.AddTaskActivity">
 
     <android.support.design.widget.TextInputLayout
@@ -78,21 +78,6 @@
         </EditText>
     </android.support.design.widget.TextInputLayout>
 
-    <Button
-        android:id="@+id/submit_new_task_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:onClick="onSubmitButtonClicked"
-        android:text="@string/submit_new_task"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priority"
-        app:layout_constraintVertical_bias="0.27" />
-
     <Spinner
         android:id="@+id/priority_spinner"
         android:layout_width="wrap_content"
@@ -120,6 +105,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.183"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/add_task_image_button"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@android:color/transparent"
+        android:onClick="onSubmitButtonClicked"
+        android:paddingHorizontal="0dp"
+        android:paddingVertical="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priority_spinner"
+        app:layout_constraintVertical_bias="0.518"
+        app:srcCompat="@drawable/add_task_button" />
 
 
 </android.support.constraint.ConstraintLayout>

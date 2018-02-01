@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.view.*;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -18,7 +18,7 @@ public class EditTaskActivity extends MenuActivity implements AdapterView.OnItem
     EditText editTaskDetails;
     Spinner editPrioritySpinner;
     RadioButton to_do, in_progress, complete;
-    Button saveChangesButton;
+    ImageButton saveChangesButton;
     Task task;
     PrioritEaseDatabase db;
 
@@ -50,7 +50,7 @@ public class EditTaskActivity extends MenuActivity implements AdapterView.OnItem
         in_progress = findViewById(R.id.in_progress);
         complete = findViewById(R.id.complete);
 
-        saveChangesButton = findViewById(R.id.save_changes_button);
+        saveChangesButton = findViewById(R.id.save_changes_image_button);
     }
 
 

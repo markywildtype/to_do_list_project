@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,8 +15,7 @@ public class TaskDetailsActivity extends MenuActivity {
     TextView taskPriority;
     TextView taskCompletionStatus;
     TextView taskDetails;
-    Button editButton;
-    Button deleteButton;
+    ImageButton editButton, deleteButton;
     Task task;
     PrioritEaseDatabase db;
 
@@ -41,8 +41,8 @@ public class TaskDetailsActivity extends MenuActivity {
         taskDetails = findViewById(R.id.task_details_task_details);
         taskDetails.setText(task.getTaskDetails());
 
-        editButton = findViewById(R.id.task_details_edit_button);
-        deleteButton = findViewById(R.id.task_details_delete_button);
+        editButton = findViewById(R.id.edit_image_button);
+        deleteButton = findViewById(R.id.delete_image_button);
     }
 
     public void onEditButtonClick(View view){
