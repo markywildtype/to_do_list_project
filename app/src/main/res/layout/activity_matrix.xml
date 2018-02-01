@@ -8,56 +8,68 @@
 
     <ImageButton
         android:id="@+id/imp_ur_button"
-        android:layout_width="160dp"
+        android:layout_width="150dp"
         android:layout_height="146dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginTop="80dp"
         android:adjustViewBounds="true"
         android:background="?android:selectableItemBackground"
         android:onClick="onClickImpUrButton"
         android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/graph_axes"
+        app:layout_constraintEnd_toEndOf="@+id/graph_axes"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.086"
         app:srcCompat="@drawable/note_red" />
 
     <ImageButton
         android:id="@+id/imp_nonur_button"
-        android:layout_width="160dp"
+        android:layout_width="150dp"
         android:layout_height="146dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="80dp"
         android:adjustViewBounds="true"
         android:background="?android:selectableItemBackground"
         android:onClick="onClickImpNonUrButton"
         android:scaleType="fitCenter"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/graph_axes"
+        app:layout_constraintEnd_toStartOf="@+id/imp_ur_button"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/graph_axes"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.086"
         app:srcCompat="@drawable/note_purple" />
 
     <ImageButton
         android:id="@+id/unimp_nonur_button"
-        android:layout_width="160dp"
+        android:layout_width="150dp"
         android:layout_height="146dp"
-        android:layout_marginBottom="120dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginBottom="92dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:adjustViewBounds="true"
         android:background="?android:selectableItemBackground"
         android:onClick="onClickUnimpNonUrButton"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/graph_axes"
+        app:layout_constraintEnd_toStartOf="@+id/unimp_ur_button"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/graph_axes"
         app:srcCompat="@drawable/note_green" />
 
     <ImageButton
         android:id="@+id/unimp_ur_button"
-        android:layout_width="160dp"
+        android:layout_width="150dp"
         android:layout_height="146dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="92dp"
         android:adjustViewBounds="true"
         android:background="?android:selectableItemBackground"
         android:onClick="onClickUnimpUrButton"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/graph_axes"
+        app:layout_constraintEnd_toEndOf="@+id/graph_axes"
         app:srcCompat="@drawable/note_blue" />
 
     <TextView
@@ -130,10 +142,10 @@
         android:layout_height="444dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.626"
+        app:layout_constraintVertical_bias="0.492"
         app:srcCompat="@drawable/iumatrix" />
 
     <ImageView
