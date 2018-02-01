@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -18,8 +19,7 @@ import java.util.List;
 
 public class ViewListActivity extends MenuActivity {
 
-    TextView nameHeader, statusHeader, priorityHeader;
-    Button sortByStatus, sortByPriority;
+    ImageButton sortByStatus, sortByPriority;
     ArrayList<Task> allTasks;
     TaskListAdapter taskListAdapter;
     int sortStatus, sortPriority;
@@ -34,12 +34,9 @@ public class ViewListActivity extends MenuActivity {
 //Placeholder data
         allTasks = new DummyData().getTaskList();
 
-        nameHeader = findViewById(R.id.name_header);
-        statusHeader = findViewById(R.id.status_header);
-        priorityHeader = findViewById(R.id.priority_header);
-
-        sortByStatus = findViewById(R.id.sort_status_button);
-        sortByPriority = findViewById(R.id.sort_priority_button);
+//Sort buttons
+        sortByStatus = findViewById(R.id.status_sort_image_button);
+        sortByPriority = findViewById(R.id.priority_sort_image_button);
 
 //Database
         PrioritEaseDatabase db = Room.databaseBuilder(getApplicationContext(), PrioritEaseDatabase.class, "prioritease database").allowMainThreadQueries().build();
