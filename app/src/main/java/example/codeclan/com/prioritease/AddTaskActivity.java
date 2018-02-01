@@ -27,8 +27,8 @@ public class AddTaskActivity extends MenuActivity implements AdapterView.OnItemS
         setContentView(R.layout.activity_add_task);
 
 
-        Toolbar myToolbar = findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
+//        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+//        setSupportActionBar(myToolbar);
 
         taskName = findViewById(R.id.task_name);
         taskDetails = findViewById(R.id.task_details);

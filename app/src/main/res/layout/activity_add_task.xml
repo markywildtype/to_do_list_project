@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="18dp"
+    android:background="@drawable/prioritease_background_tall"
     tools:context="example.codeclan.com.prioritease.AddTaskActivity">
 
     <android.support.design.widget.TextInputLayout

@@ -1,25 +1,23 @@
 package example.codeclan.com.prioritease;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends MenuActivity {
 
-    Button viewByPriorityButton, viewListButton, newTaskButton;
-
-    Button toolBarTestButton;
+    ImageButton viewByPriorityImageButton, viewListImageButton, newTaskImageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        viewListButton = findViewById(R.id.view_list_button);
-        newTaskButton = findViewById(R.id.new_task_button);
-        viewByPriorityButton = findViewById((R.id.view_multiple_lists_button));
+        viewListImageButton = findViewById(R.id.view_list_image_button);
+        newTaskImageButton = findViewById(R.id.add_task_image_button);
+        viewByPriorityImageButton = findViewById(R.id.view_multiple_lists_image_button);
     }
 
     public void onAddTaskButtonClicked(View button){
@@ -36,12 +34,5 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MatrixActivity.class);
         startActivity(intent);
     }
-
-//Toolbar test
-    public void onToolBarTestButtonClicked(View view){
-        Intent intent = new Intent(this, ToolBarTestActivity.class);
-        startActivity(intent);
-    }
-
 
 }

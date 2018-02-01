@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/prioritease_background_tall"
     tools:context="example.codeclan.com.prioritease.ToolBarTestActivity">
 
     <android.support.v7.widget.Toolbar
@@ -12,14 +13,16 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <ImageView
             android:id="@+id/icon"
-            android:layout_width="80dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:contentDescription="@string/prioritease_icon"
-            android:src="@drawable/prioritease_icon"
+            android:src="@drawable/prioritease_text_logo"
             tools:layout_editor_absoluteX="16dp" />
     </android.support.v7.widget.Toolbar>
 

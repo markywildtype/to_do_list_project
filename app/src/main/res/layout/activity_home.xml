@@ -6,51 +6,6 @@
     android:layout_height="match_parent"
     tools:context="example.codeclan.com.prioritease.HomeActivity">
 
-    <Button
-        android:id="@+id/view_list_button"
-        android:layout_width="235dp"
-        android:layout_height="78dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:onClick="onViewListButtonClicked"
-        android:text="@string/view_list_button"
-        app:layout_constraintBottom_toTopOf="@+id/new_task_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_multiple_lists_button"
-        app:layout_constraintVertical_bias="0.538" />
-
-    <Button
-        android:id="@+id/view_multiple_lists_button"
-        android:layout_width="235dp"
-        android:layout_height="78dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="232dp"
-        android:onClick="onViewByPriorityButtonClicked"
-        android:text="@string/view_by_priority"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/new_task_button"
-        android:layout_width="235dp"
-        android:layout_height="78dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:onClick="onAddTaskButtonClicked"
-        android:text="@string/new_task_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="293dp"
@@ -63,18 +18,66 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/prioritease_logo" />
 
-    <!--<Button-->
-        <!--android:id="@+id/toolbar_test_button"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginEnd="8dp"-->
-        <!--android:layout_marginStart="8dp"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:onClick="onToolBarTestButtonClicked"-->
-        <!--android:text="Button"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent" />-->
+    <ImageButton
+        android:id="@+id/view_multiple_lists_image_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@android:color/transparent"
+        android:onClick="onViewByPriorityButtonClicked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:srcCompat="@drawable/view_by_priority_button" />
+
+    <ImageButton
+        android:id="@+id/view_list_image_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@android:color/transparent"
+        android:onClick="onViewListButtonClicked"
+        app:layout_constraintBottom_toTopOf="@+id/add_task_image_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_multiple_lists_image_button"
+        app:srcCompat="@drawable/view_all_tasks_button" />
+
+    <ImageButton
+        android:id="@+id/add_task_image_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@android:color/transparent"
+        android:onClick="onAddTaskButtonClicked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/add_new_task_button" />
+
+
+    <!--<android.support.v7.widget.Toolbar-->
+    <!--android:id="@+id/my_toolbar2"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="?attr/actionBarSize"-->
+    <!--android:background="?attr/colorPrimary"-->
+    <!--android:minHeight="?attr/actionBarSize"-->
+    <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+    <!--tools:layout_editor_absoluteX="0dp"-->
+    <!--tools:layout_editor_absoluteY="0dp">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/icon"-->
+    <!--android:layout_width="150dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:contentDescription="@string/prioritease_icon"-->
+    <!--android:src="@drawable/prioritease_text_logo"-->
+    <!--tools:layout_editor_absoluteX="16dp" />-->
+    <!--</android.support.v7.widget.Toolbar>-->
 
 
 </android.support.constraint.ConstraintLayout>
