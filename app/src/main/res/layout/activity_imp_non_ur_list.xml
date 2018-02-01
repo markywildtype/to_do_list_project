@@ -48,8 +48,10 @@
         android:id="@+id/status_header2"
         android:layout_width="107dp"
         android:layout_height="22dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/priority_header2"
         app:layout_constraintStart_toEndOf="@+id/task_name_header3"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/status_header" />
