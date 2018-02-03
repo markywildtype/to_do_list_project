@@ -51,5 +51,3 @@ public interface TaskDao {
     @Query("SELECT * FROM tasks WHERE taskPriority = 'D_UNIMPORTANT_NONURGENT'")
     public List<Task> getAllUnimpNonUrTasks();
 }
-
-//    WHERE taskPriority = 'A_IMPORTANT_URGENT'

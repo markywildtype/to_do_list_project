@@ -3,6 +3,7 @@ package example.codeclan.com.prioritease;
 import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.*;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -39,7 +40,9 @@ public class TaskDetailsActivity extends MenuActivity {
         taskCompletionStatus.setText("Status: " + task.getCompletionStatusAsString());
 
         taskDetails = findViewById(R.id.task_details_task_details);
+//        taskDetails.setMovementMethod(new ScrollingMovementMethod());
         taskDetails.setText(task.getTaskDetails());
+
 
         editButton = findViewById(R.id.edit_image_button);
         deleteButton = findViewById(R.id.delete_image_button);
