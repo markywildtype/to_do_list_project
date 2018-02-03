@@ -11,7 +11,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UnimpNonUrListActivity extends AppCompatActivity {
+public class UnimpNonUrListActivity extends MenuActivity {
     List<Task> allTasksAsList;
     ArrayList<Task> allUnimpNonUrTasks;
     TaskListAdapter taskListAdapter;
