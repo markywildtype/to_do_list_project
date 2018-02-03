@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:fillViewport="true"-->
+    <!--android:background="@drawable/prioritease_background_tall"-->
+    <!--tools:context=".TaskDetailsActivity">-->
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="14dp"
-    android:background="@drawable/prioritease_background_tall"
     tools:context="example.codeclan.com.prioritease.EditTaskActivity">
 
 
@@ -42,29 +51,28 @@
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textContainer"
         android:layout_width="0dp"
-        android:layout_height="155dp"
+        android:layout_height="192dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="16dp"
         app:counterEnabled="true"
         app:counterMaxLength="200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.394">
+        app:layout_constraintVertical_bias="0.484">
 
         <EditText
             android:id="@+id/edit_task_details"
             android:layout_width="match_parent"
-            android:layout_height="109dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:background="@android:color/transparent"
             android:hint="@string/task_details_hint"
-
+            android:paddingTop="@dimen/td_margin"
             android:inputType="textCapSentences|textMultiLine"
             android:maxLength="200"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -121,11 +129,11 @@
         android:layout_height="43dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/save_changes_button"
+        app:layout_constraintBottom_toTopOf="@+id/save_changes_image_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textContainer" />
+        app:layout_constraintTop_toBottomOf="@+id/textContainer"
+        app:layout_constraintVertical_bias="0.889" />
 
     <TextView
         android:id="@+id/textView"
@@ -160,3 +168,4 @@
         app:srcCompat="@drawable/save_changes_button" />
 
 </android.support.constraint.ConstraintLayout>
+<!--</ScrollView>-->

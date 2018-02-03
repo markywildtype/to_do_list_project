@@ -28,7 +28,9 @@ public class ViewListActivity extends MenuActivity {
         setContentView(R.layout.activity_view_list);
 
 //Placeholder data
-        allTasks = new DummyData().getTaskList();
+//        allTasks = new DummyData().getTaskList();
+
+        allTasks = new ArrayList<>();
 
 //Sort buttons
         sortByStatus = findViewById(R.id.status_sort_image_button);
