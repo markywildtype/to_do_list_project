@@ -19,6 +19,7 @@ public class TaskDetailsActivity extends MenuActivity {
     ImageButton editButton, deleteButton;
     Task task;
     PrioritEaseDatabase db;
+    String parent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,8 @@ public class TaskDetailsActivity extends MenuActivity {
 
         Intent intent = getIntent();
         task = (Task) intent.getSerializableExtra("task");
+        Bundle b = intent.getExtras();
+        parent = (String) b.get("origin");
 
         taskName = findViewById(R.id.task_details_task_name);
         taskName.setText("Task Name: " + task.getTaskName());
@@ -51,6 +54,7 @@ public class TaskDetailsActivity extends MenuActivity {
     public void onEditButtonClick(View view){
         Intent intent = new Intent(this, EditTaskActivity.class);
         intent.putExtra("task", task);
+        intent.putExtra("origin", "details");
         startActivity(intent);
     }
 
@@ -61,4 +65,25 @@ public class TaskDetailsActivity extends MenuActivity {
         startActivity(intent);
         Toast.makeText(TaskDetailsActivity.this, "Task deleted!" , Toast.LENGTH_SHORT).show();
     }
+
+    //Custom Up button/parent activity
+    @Override
+    public Intent getSupportParentActivityIntent(){
+        return getParentActivityIntentImpl();
+    }
+
+    @Override
+    public Intent getParentActivityIntent(){
+        return getParentActivityIntentImpl();
+    }
+
+    private Intent getParentActivityIntentImpl() {
+        Intent i = null;
+        if (parent != null) {
+            i = new Intent(this, ViewListActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        }
+        return i;
+    }
+
 }

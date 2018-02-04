@@ -117,6 +117,9 @@ public class ViewListActivity extends MenuActivity {
         if (b != null) {
             i = new Intent(this, MatrixActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        } else {
+            i = new Intent(this, HomeActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         }
         return i;
     }
@@ -126,9 +129,9 @@ public class ViewListActivity extends MenuActivity {
 //onClick Methods
     public void onListItemClick(View listItem){
         Task task = (Task) listItem.getTag();
-
         Intent intent = new Intent(this, TaskDetailsActivity.class);
         intent.putExtra("task", task);
+        intent.putExtra("origin", matrixPos);
         startActivity(intent);
     }
 

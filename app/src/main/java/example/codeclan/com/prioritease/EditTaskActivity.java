@@ -21,6 +21,8 @@ public class EditTaskActivity extends MenuActivity implements AdapterView.OnItem
     ImageButton saveChangesButton;
     Task task;
     PrioritEaseDatabase db;
+    Bundle b;
+    String parent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class EditTaskActivity extends MenuActivity implements AdapterView.OnItem
 
         Intent intent = getIntent();
         task = (Task) intent.getSerializableExtra("task");
+        b = intent.getExtras();
+        parent = b.getString("origin");
 
         editTaskName = findViewById(R.id.edit_task_name);
         editTaskName.setText(task.getTaskName());
@@ -107,5 +111,25 @@ public class EditTaskActivity extends MenuActivity implements AdapterView.OnItem
         Intent intent = new Intent(EditTaskActivity.this, ViewListActivity.class);
         startActivity(intent);
         Toast.makeText(EditTaskActivity.this, "Task updated!" , Toast.LENGTH_SHORT).show();
+    }
+
+//Custom Up button/parent activity
+    @Override
+    public Intent getSupportParentActivityIntent(){
+        return getParentActivityIntentImpl();
+    }
+
+    @Override
+    public Intent getParentActivityIntent(){
+        return getParentActivityIntentImpl();
+    }
+
+    private Intent getParentActivityIntentImpl() {
+        Intent i = null;
+        if (parent != null) {
+            i = new Intent(this, TaskDetailsActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        }
+        return i;
     }
 }
