@@ -38,18 +38,6 @@
         <activity
             android:name=".MatrixActivity"
             android:parentActivityName=".HomeActivity" />
-        <activity
-            android:name=".ImpUrListActivity"
-            android:parentActivityName=".MatrixActivity"/>
-        <activity
-            android:name=".UnimpUrListActivity"
-            android:parentActivityName=".MatrixActivity"/>
-        <activity
-            android:name=".ImpNonUrListActivity"
-            android:parentActivityName=".MatrixActivity"/>
-        <activity
-            android:name=".UnimpNonUrListActivity"
-            android:parentActivityName=".MatrixActivity"/>
         <!--<activity android:name=".ToolBarTestActivity"-->
             <!--android:parentActivityName=".HomeActivity"/>-->
     </application>
