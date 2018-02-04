@@ -4,7 +4,7 @@
     <string name="view_list_button">View All Tasks</string>
     <string name="new_task_button">Add New Task</string>
     <string name="add_task_title">PrioritEase: Add Task</string>
-    <string name="view_list_title">PrioritEase: All Tasks</string>
+    <string name="view_list_title">PrioritEase: View Tasks</string>
     <string name="task_name">Task Name:</string>
     <string name="task_name_hint">Task Name</string>
     <string name="task_details_hint">Task Details</string>
