@@ -46,22 +46,26 @@ public class MatrixActivity extends MenuActivity {
     }
 
     public void onClickImpUrButton(View view){
-        Intent intent = new Intent(this, ImpUrListActivity.class);
+        Intent intent = new Intent(this, ViewListActivity.class);
+        intent.putExtra("matrix pos", "IU");
         startActivity(intent);
     }
 
     public void onClickImpNonUrButton(View view){
-        Intent intent = new Intent(this, ImpNonUrListActivity.class);
+        Intent intent = new Intent(this, ViewListActivity.class);
+        intent.putExtra("matrix pos", "IN");
         startActivity(intent);
     }
 
     public void onClickUnimpUrButton(View view){
-        Intent intent = new Intent(this, UnimpUrListActivity.class);
+        Intent intent = new Intent(this, ViewListActivity.class);
+        intent.putExtra("matrix pos", "UU");
         startActivity(intent);
     }
 
     public void onClickUnimpNonUrButton(View view){
-        Intent intent = new Intent(this, UnimpNonUrListActivity.class);
+        Intent intent = new Intent(this, ViewListActivity.class);
+        intent.putExtra("matrix pos", "UN");
         startActivity(intent);
     }
 }

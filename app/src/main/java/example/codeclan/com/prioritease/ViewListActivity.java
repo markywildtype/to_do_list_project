@@ -39,8 +39,38 @@ public class ViewListActivity extends MenuActivity {
 //Database
         PrioritEaseDatabase db = Room.databaseBuilder(getApplicationContext(), PrioritEaseDatabase.class, "prioritease database").allowMainThreadQueries().build();
 
-        List<Task> allTasksAsList = db.taskDao().getAllTasks();
-        allTasks.addAll(new ArrayList<>(allTasksAsList));
+//Make ViewList reusable by Priority Lists
+        Intent intent = getIntent();
+        Bundle  b = intent.getExtras();
+
+
+        if(b != null) {
+            String matrixPos = (String) b.get("matrix pos");
+            switch (matrixPos) {
+                case "IU":
+                    List<Task> allIUTasksAsList = db.taskDao().getAllImpUrTasks();
+                    allTasks.clear();
+                    allTasks.addAll(new ArrayList<>(allIUTasksAsList));
+                    break;
+                case "IN":
+                    List<Task> allINTasksAsList = db.taskDao().getAllImpNonUrTasks();
+                    allTasks.addAll(new ArrayList<>(allINTasksAsList));
+                    break;
+                case "UU":
+                    List<Task> allUUTasksAsList = db.taskDao().getAllUnimpUrTasks();
+                    allTasks.addAll(new ArrayList<>(allUUTasksAsList));
+                    break;
+                case "UN":
+                    List<Task> allUNTasksAsList = db.taskDao().getAllUnimpNonUrTasks();
+                    allTasks.addAll(new ArrayList<>(allUNTasksAsList));
+                    break;
+            }
+        }
+        else {
+            List<Task> allTasksAsList = db.taskDao().getAllTasks();
+            allTasks.addAll(new ArrayList<>(allTasksAsList));
+        }
+
 
 //Sorting variables
         sortStatus = 0;
