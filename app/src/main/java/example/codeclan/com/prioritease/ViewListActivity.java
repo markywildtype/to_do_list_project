@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ import java.util.List;
 public class ViewListActivity extends MenuActivity {
 
     ImageButton sortByStatus, sortByPriority;
+    ImageView sortPriorityHeader;
     ArrayList<Task> allTasks;
     TaskListAdapter taskListAdapter;
     int sortStatus, sortPriority;
@@ -40,6 +42,7 @@ public class ViewListActivity extends MenuActivity {
         PrioritEaseDatabase db = Room.databaseBuilder(getApplicationContext(), PrioritEaseDatabase.class, "prioritease database").allowMainThreadQueries().build();
 
 //Make ViewList reusable by Priority Lists
+        sortPriorityHeader = findViewById(R.id.sort_priority_header);
         Intent intent = getIntent();
         Bundle  b = intent.getExtras();
 
@@ -48,25 +51,29 @@ public class ViewListActivity extends MenuActivity {
             String matrixPos = (String) b.get("matrix pos");
             switch (matrixPos) {
                 case "IU":
+                    sortByPriority.setVisibility(View.INVISIBLE);
                     List<Task> allIUTasksAsList = db.taskDao().getAllImpUrTasks();
-                    allTasks.clear();
                     allTasks.addAll(new ArrayList<>(allIUTasksAsList));
                     break;
                 case "IN":
+                    sortByPriority.setVisibility(View.INVISIBLE);
                     List<Task> allINTasksAsList = db.taskDao().getAllImpNonUrTasks();
                     allTasks.addAll(new ArrayList<>(allINTasksAsList));
                     break;
                 case "UU":
+                    sortByPriority.setVisibility(View.INVISIBLE);
                     List<Task> allUUTasksAsList = db.taskDao().getAllUnimpUrTasks();
                     allTasks.addAll(new ArrayList<>(allUUTasksAsList));
                     break;
                 case "UN":
+                    sortByPriority.setVisibility(View.INVISIBLE);
                     List<Task> allUNTasksAsList = db.taskDao().getAllUnimpNonUrTasks();
                     allTasks.addAll(new ArrayList<>(allUNTasksAsList));
                     break;
             }
         }
         else {
+            sortPriorityHeader.setVisibility(View.INVISIBLE);
             List<Task> allTasksAsList = db.taskDao().getAllTasks();
             allTasks.addAll(new ArrayList<>(allTasksAsList));
         }
