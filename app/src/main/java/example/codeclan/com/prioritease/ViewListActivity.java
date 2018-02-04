@@ -21,13 +21,15 @@ public class ViewListActivity extends MenuActivity {
     ArrayList<Task> allTasks;
     TaskListAdapter taskListAdapter;
     int sortStatus, sortPriority;
-
+    String matrixPos;
     FloatingActionButton fab;
+    Bundle b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_list);
+
 
 //Placeholder data
 //        allTasks = new DummyData().getTaskList();
@@ -44,11 +46,11 @@ public class ViewListActivity extends MenuActivity {
 //Make ViewList reusable by Priority Lists
         sortPriorityHeader = findViewById(R.id.sort_priority_header);
         Intent intent = getIntent();
-        Bundle  b = intent.getExtras();
+        b = intent.getExtras();
 
 
         if(b != null) {
-            String matrixPos = (String) b.get("matrix pos");
+            matrixPos = (String) b.get("matrix pos");
             switch (matrixPos) {
                 case "IU":
                     sortByPriority.setVisibility(View.INVISIBLE);
@@ -99,6 +101,29 @@ public class ViewListActivity extends MenuActivity {
         });
     }
 
+//Custom Up button/parent activity
+    @Override
+    public Intent getSupportParentActivityIntent(){
+        return getParentActivityIntentImpl();
+    }
+
+    @Override
+    public Intent getParentActivityIntent(){
+        return getParentActivityIntentImpl();
+    }
+
+    private Intent getParentActivityIntentImpl() {
+        Intent i = null;
+        if (b != null) {
+            i = new Intent(this, MatrixActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        }
+        return i;
+    }
+
+
+
+//onClick Methods
     public void onListItemClick(View listItem){
         Task task = (Task) listItem.getTag();
 
